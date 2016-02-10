@@ -1,0 +1,30 @@
+{
+  "name": "workshop2-angular-material",
+  "description": "Angular Material, UI-Router, Firebase",
+  "main": "index.js",
+  "authors": [
+    "Jordan Bisasky"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "angular",
+    "material",
+    "angular",
+    "firebase"
+  ],
+  "homepage": "https://github.com/addevonly/workshop2-angular-material",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "www/bower_components",
+    "test",
+    "tests"
+  ],
+    "dependencies": {
+    "angular-material": "^1.0.5",
+    "angular-ui-router": "ui-router#^0.2.18",
+    "angularfire": "^1.1.3"
+  }
+}
