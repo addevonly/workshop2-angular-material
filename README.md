@@ -5,7 +5,7 @@ Workshop writing Angular code to complete a simple chat client. The workshop is 
 ###Getting Started###
 Clone the repository and go to the newly created directory.
 ```bash
-git clone https://github.com/addevonly/workshop1-angular-intro.git
+git clone git@github.com:addevonly/workshop2-angular-material.git
 cd workshop2-angular-material
 ```
 
