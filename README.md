@@ -13,6 +13,9 @@ The following Bower components of note are used:
  - Firebase
  - Angular Fire
 
+Exporting the path in local bashrc will make executable of node modules available on command line. 
+```export PATH="./node_modules/.bin:$PATH"```
+
 Please run npm install and bower install to download all of the needed packages.
 
 **The build scripts in package.json require the following to be installed globally:**
@@ -23,7 +26,7 @@ The application uses CommonJS commands for modularization. The distinguishable d
 
 To start the bundling process, run in the main directory:
 ```bash
-node start
+npm start
 ```
 
 [Nodemon][nodemon] or another node watcher is recommended (npm install -g nodemon) for monitoring any changes in the source and automatically restarting the server.
