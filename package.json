@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Angular Material, UI-Router, Firebase",
   "main": "index.js",
- "scripts": {
+  "scripts": {
     "clean": "> www/dist.js",
     "bundle": "browserify www/app.js -o www/dist.js",
     "watch": "watchify www/app.js -o www/dist.js",
@@ -26,7 +26,11 @@
   },
   "homepage": "https://github.com/addevonly/workshop2-angular-material#readme",
   "dependencies": {
-    "bower": "^1.7.7",
     "express": "^4.13.4"
+  },
+  "devDependencies": {
+    "bower": "^1.7.7",
+    "browserify": "^13.0.0",
+    "watchify": "^3.7.0"
   }
 }
