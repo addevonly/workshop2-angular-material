@@ -17,7 +17,8 @@
 
   <body ng-controller='appCtrl as vm'>
     <h2>Step 3 - Modify and Delete Users</h2>
-    Search: <input ng-model='vm.search'>
+    <div>Search: <input ng-model='vm.search'></div>
+    <br>
     <div ng-repeat='user in vm.users | filter: vm.search | orderBy:"data.name"'>
       {{user.data.name}} - {{user.data.email}}
     </div>
