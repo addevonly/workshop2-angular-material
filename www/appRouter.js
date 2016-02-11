@@ -3,9 +3,18 @@
 
   module.exports = function($stateProvider, $urlRouterProvider) {
     // Default to the userList state if a state is not specified
-    $urlRouterProvider.otherwise('/userList');
+    $urlRouterProvider.otherwise('/chat');
 
     $stateProvider
+    .state('chat', {
+      url: '/chat',
+      views: {
+        'view': {
+          templateUrl: 'chat.html',
+          controller: 'chatCtrl as vmc',
+        }
+      }
+    })
     .state('userList', {
       url: '/userList',
       views: {

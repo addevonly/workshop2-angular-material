@@ -11,11 +11,12 @@
   .controller('appCtrl', require('./appCtrl'))
   .controller('userCtrl', require('./userCtrl'))
   .controller('userListCtrl', require('./userListCtrl'))
+  .controller('chatCtrl', require('./chatCtrl'))
   .factory('firebaseFactory', require('./firebaseFactory'))
   .constant('FIRE_URL', 'https://material-sandbox.firebaseio.com/');
 })();
 
-},{"./appCtrl":2,"./appRouter":3,"./firebaseFactory":4,"./userCtrl":5,"./userListCtrl":6}],2:[function(require,module,exports){
+},{"./appCtrl":2,"./appRouter":3,"./chatCtrl":4,"./firebaseFactory":5,"./userCtrl":6,"./userListCtrl":7}],2:[function(require,module,exports){
 (function() {
   'use strict';
 
@@ -34,9 +35,18 @@
 
   module.exports = function($stateProvider, $urlRouterProvider) {
     // Default to the userList state if a state is not specified
-    $urlRouterProvider.otherwise('/userList');
+    $urlRouterProvider.otherwise('/chat');
 
     $stateProvider
+    .state('chat', {
+      url: '/chat',
+      views: {
+        'view': {
+          templateUrl: 'chat.html',
+          controller: 'chatCtrl as vmc',
+        }
+      }
+    })
     .state('userList', {
       url: '/userList',
       views: {
@@ -59,6 +69,33 @@
 })();
 
 },{}],4:[function(require,module,exports){
+(function() {
+  'use strict';
+
+  module.exports = chatCtrl;
+
+  chatCtrl.$inject = ['firebaseFactory'];
+
+  function chatCtrl(firebaseFactory) {
+    var vmc = this;
+
+    vmc.postChat = postChat;
+    vmc.chat = firebaseFactory.getAll('chat');
+    vmc.savedUsers = firebaseFactory.getAll('user');
+
+    function postChat(name, message) {
+      var newMessage = {
+        name: name,
+        message: message,
+      };
+
+      firebaseFactory.insertDb('chat', newMessage);
+      message = '';
+    }
+  }
+})();
+
+},{}],5:[function(require,module,exports){
 (function() {
   'use strict';
 
@@ -145,7 +182,7 @@
  }
 })();
 
-},{}],5:[function(require,module,exports){
+},{}],6:[function(require,module,exports){
 (function() {
   'use strict';
 
@@ -171,7 +208,7 @@
   }
 })();
 
-},{}],6:[function(require,module,exports){
+},{}],7:[function(require,module,exports){
 (function() {
   'use strict';
 
