@@ -2,7 +2,8 @@
   'use strict';
 
   module.exports = function($stateProvider, $urlRouterProvider) {
-    $urlRouterProvider.otherwise('/chat');
+    // Default to the userList state if a state is not specified
+    $urlRouterProvider.otherwise('/userList');
 
     $stateProvider
     .state('userList', {
