@@ -27,7 +27,10 @@ To start the bundling process, run in the main directory:
 npm start
 ```
 
-[Nodemon][nodemon] or another node watcher is recommended (npm install -g nodemon) for monitoring any changes in the server source(server.js) and automatically restarting the server.
+If any changes are made to the server code(server.js) run:
+```bash
+node server
+```
 
 To start theserver using Nodemon, in another terminal session in the main directory, run:
 ```bash
