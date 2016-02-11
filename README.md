@@ -1,42 +1,27 @@
-# Firebase and Angular-Material Sandbox
+# Workshop 2 - Step 1
 
-This is a sandbox application using Angular Material and Firebase.
+If you have not done already, check out the branch and run the server.
 
-The SPA is served using NodeJS and Express. Firebase is used as the real time database backend. The link to the Firebase server is https://material-sandbox.firebaseio.com/.
-
-Presently the application consists of 3 UI router views; a simple chat, a list of users, and a new user form.
-
-The following Bower components of note are used:
- - Angular
- - Angular Material
- - UI-Router
- - Firebase
- - Angular Fire
-
-Exporting the path in local bashrc will make executable of node modules available on command line. 
 ```bash
-export PATH="./node_modules/.bin:$PATH"
+git checkout step1
+node server
 ```
 
-Please run npm install and bower install to download all of the needed packages.
+###Summary###
+In the first step, we want to list the name and email address of each user in the Users table in the Firebase instance. In addition we want to use two filters to search for a name/email address and sort the users by name alphabetically.
 
-**The build scripts in package.json require the following to be installed globally:**
- - [Browserify][browserify] (npm install -g browserify)
- - [Watchify][watchify] (npm install -g watchify)
+There is already a factory called firebaseFactory that will make the get, update, delete calls to Firebase. In addition the appCtrl.js controller is getting an array of users. So the array of users is already bound to the main template index.html. We just need to display the users.
 
-The application uses CommonJS commands for modularization. The distinguishable difference is that 'require' and 'module.exports' are used, both commands common in NodeJS. Because of this, Browserify **must** be used to bundle the application since it supports 'require' and modules.
+###Instructions###
+1. Iterate over the array using ng-repeat and print the name and email of each user
+ * [ngRepeat Directive](https://docs.angularjs.org/api/ng/directive/ngRepeat)
+ * Notice that the camelCase is replaced by all lowercase and a dash in the template? ```<div ng-repeat="(key, value) in myObj"> ... </div>```
+ * Use double curly braces to bind expressions to elements: ```{{vm.example}}```
+2. Order elements by name
+ * [orderBy Filter](https://docs.angularjs.org/api/ng/filter/orderBy)
+3. Add an input element that will filter the array
+ * [filter Filter](https://docs.angularjs.org/api/ng/filter/filter)
 
-To start the bundling process, run in the main directory:
-```bash
-npm start
-```
-
-[Nodemon][nodemon] or another node watcher is recommended (npm install -g nodemon) for monitoring any changes in the source and automatically restarting the server.
-
-To start theserver using Nodemon, in another terminal session in the main directory, run:
-```bash
-nodemon server
-```
 
 [nodemon]: http://nodemon.io/
 [browserify]: http://browserify.org/
