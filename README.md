@@ -14,7 +14,9 @@ The following Bower components of note are used:
  - Angular Fire
 
 Exporting the path in local bashrc will make executable of node modules available on command line. 
-```export PATH="./node_modules/.bin:$PATH"```
+```bash
+export PATH="./node_modules/.bin:$PATH"
+```
 
 Please run npm install and bower install to download all of the needed packages.
 
