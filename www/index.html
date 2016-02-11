@@ -16,9 +16,15 @@
   </head>
 
   <body ng-controller='appCtrl as vm'>
-    <h2>Step 1 - List of Users from Firebase Instance</h2>
-    <p>Iterate over the array using ng-repeat and print the name and email of each user</p>
+    <h2>Step 2 - Create new user</h2>
+    Search: <input ng-model='vm.search'>
+    <div ng-repeat='user in vm.users | filter:vm.search | orderBy:data.name'>
+      {{user.data.name}} - {{user.data.email}}
+    </div>
+
+    <p>Write an ng-submit form with an input for a name and email address</p>
+    <a target='_blank' href='https://docs.angularjs.org/api/ng/directive/ngSubmit'>ng-submit</a>
+
     <a target='_blank' href='https://material-sandbox.firebaseio.com/user'>Firebase User Instance</a>
-    <p>A sample user object in the array: { data: { name: "Jordan", email: "jordan@aol.com" } }</p>
   </body>
 </html>
