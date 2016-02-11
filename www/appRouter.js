@@ -2,7 +2,7 @@
   'use strict';
 
   module.exports = function($stateProvider, $urlRouterProvider) {
-    $urlRouterProvider.otherwise('/chat');
+    $urlRouterProvider.otherwise('/userList');
 
     $stateProvider
     .state('userList', {

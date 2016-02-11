@@ -1,1 +1,9 @@
-<!-- User list goes here-->
+<h3>User List</h3>
+
+<div>Search: <input ng-model='vmc.search'></div>
+<br>
+<div ng-repeat='user in vmc.users | filter: vmc.search | orderBy:"data.name"'>
+  <input ng-model='user.data.name' ng-change='vmc.editUser(user)'>
+  <input ng-model='user.data.email' ng-change='vmc.editUser(user)'>
+  <button ng-click='vmc.deleteUser(user)'>Delete</button>
+</div>
