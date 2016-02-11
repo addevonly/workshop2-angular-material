@@ -7,12 +7,15 @@
       'ngMaterial',
       'firebase'
   ])
+  .config(['$stateProvider', '$urlRouterProvider', require('./appRouter')])
   .controller('appCtrl', require('./appCtrl'))
+  .controller('userCtrl', require('./userCtrl'))
+  .controller('userListCtrl', require('./userListCtrl'))
   .factory('firebaseFactory', require('./firebaseFactory'))
   .constant('FIRE_URL', 'https://material-sandbox.firebaseio.com/');
 })();
 
-},{"./appCtrl":2,"./firebaseFactory":3}],2:[function(require,module,exports){
+},{"./appCtrl":2,"./appRouter":3,"./firebaseFactory":4,"./userCtrl":5,"./userListCtrl":6}],2:[function(require,module,exports){
 (function() {
   'use strict';
 
@@ -65,6 +68,35 @@
 })();
 
 },{}],3:[function(require,module,exports){
+(function() {
+  'use strict';
+
+  module.exports = function($stateProvider, $urlRouterProvider) {
+    $urlRouterProvider.otherwise('/chat');
+
+    $stateProvider
+    .state('userList', {
+      url: '/userList',
+      views: {
+        'view': {
+          templateUrl: 'userList.html',
+          controller: 'userListCtrl as vmc',
+        }
+      }
+    })
+    .state('user', {
+      url: '/user',
+      views: {
+        'view': {
+          templateUrl: 'user.html',
+          controller: 'userCtrl as vmc',
+        }
+      }
+    });
+  };
+})();
+
+},{}],4:[function(require,module,exports){
 (function() {
   'use strict';
 
@@ -149,6 +181,35 @@
       }
     }
  }
+})();
+
+},{}],5:[function(require,module,exports){
+(function() {
+  'use strict';
+
+  userCtrl.$inject = ['firebaseFactory'];
+
+  function userCtrl(firebaseFactory) {
+    var vmc = this;
+
+    // TODO: Controller for adding new user
+    // NOTE: We are using 'vmc' now instead of 'vm' since this is a child controller
+  }
+})();
+
+},{}],6:[function(require,module,exports){
+(function() {
+  'use strict';
+
+  module.exports = userListCtrl;
+  userListCtrl.$inject = ['$firebaseArray', 'firebaseFactory']
+
+  function userListCtrl($firebaseArray, firebaseFactory) {
+    var vmc = this;
+
+    // TODO: Controller for getting, editing, deleting users
+    // NOTE: We are using 'vmc' now instead of 'vm' since this is a child controller
+  }
 })();
 
 },{}]},{},[1]);

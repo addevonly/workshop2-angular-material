@@ -6,7 +6,10 @@
       'ngMaterial',
       'firebase'
   ])
+  .config(['$stateProvider', '$urlRouterProvider', require('./appRouter')])
   .controller('appCtrl', require('./appCtrl'))
+  .controller('userCtrl', require('./userCtrl'))
+  .controller('userListCtrl', require('./userListCtrl'))
   .factory('firebaseFactory', require('./firebaseFactory'))
   .constant('FIRE_URL', 'https://material-sandbox.firebaseio.com/');
 })();

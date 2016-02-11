@@ -16,7 +16,16 @@
   </head>
 
   <body ng-controller='appCtrl as vm'>
-    <h2>Step 3 - Modify and Delete Users</h2>
+    <h2>Step 4 - Use UI-Router to Create Views</h2>
+    <div>The links below use UI-Router's ui-sref attribute instead of href</div>
+    <!-- userList and user are the states -->
+    <a ui-sref='userList'>User List</a>
+    <a ui-sref='user'>New User</a>
+
+    <!-- The selected view is placed in this div -->
+    <div flex ui-view='view'></div>
+
+    <br><br>
     <div>Search: <input ng-model='vm.search'></div>
     <br>
     <div ng-repeat='user in vm.users | filter: vm.search | orderBy:"data.name"'>
@@ -35,12 +44,12 @@
 
     <div>Complete the following:</div>
     <ol>
-      <li>Change name and email to input fields</li>
-      <li>Use ng-change so the Firebase user table is updated upon change</li>
-      <li>Add a delete button and function to remove a user from Firebase</li>
+      <li>Move the user list to userList.html and userListCtrl.js</li>
+      <li>Move the create new user form to user.html and userCtrl.js</li>
+      <li>Remove the user list and create new user form from index.html</li>
     </ol>
 
-    <a target='_blank' href='https://docs.angularjs.org/api/ng/directive/ngChange'>ng-change</a><br>
+    <a target='_blank' href='https://github.com/angular-ui/ui-router'>Angular UI-Router</a><br>
     <a target='_blank' href='https://material-sandbox.firebaseio.com/user'>Firebase User Instance</a>
   </body>
 </html>
