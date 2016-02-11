@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html ng-app='app'>
   <head>
-    <title>Workshop 2 Step 6</title>
+    <title>Workshop 2 Step 5</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"></link>
     <link rel='stylesheet' href='/bower_components/angular-material/angular-material.min.css'></link>
     <script src='/bower_components/angular/angular.min.js'></script>
@@ -16,25 +16,29 @@
   </head>
 
   <body ng-controller='appCtrl as vm'>
-    <h2>Step 6 - Angular Material</h2>
+    <h2>Step 5 - Add a chat client as a new UI-Router view</h2>
+    <div>The links below use UI-Router's ui-sref attribute instead of href</div>
 
-    <a ui-sref='chat'>Chat</a>
     <a ui-sref='userList'>User List</a>
     <a ui-sref='user'>New User</a>
-
+    <!-- TODO: Add chat state -->
 
     <!-- The selected view is placed in this div -->
     <div flex ui-view='view'></div>
     <br><br>
 
-    <div>Complete the following in the main index view:</div>
+    <div>Complete the following:</div>
     <ol>
-      <li>Replace the links with <a target='_blank' href='https://material.angularjs.org/latest/demo/tabs'>tabs</a></li>
+      <li>Add a chat.html and chat.js</li>
+      <li>Add a chat controller module to app.js</li>
+      <li>Update appRouter.js to add a chat state</li>
+      <li>Using the 'chat' path, get and display the chat messages array from Firebase</li>
+      <li>Add a form to post new messages to the chat table</li>
     </ol>
 
     <p>Use the following format for posting/displaying messages: { name: 'Jordan', message: 'Hi' }</p>
 
-    <a target='_blank' href='https://material.angularjs.org'>Angular Material</a><br>
+    <a target='_blank' href='https://github.com/angular-ui/ui-router'>Angular UI-Router</a><br>
     <a target='_blank' href='https://material-sandbox.firebaseio.com/user'>Firebase User Instance</a><br>
     <a target='_blank' href='https://material-sandbox.firebaseio.com/user'>Firebase Chat Instance</a>
   </body>

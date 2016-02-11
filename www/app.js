@@ -10,7 +10,6 @@
   .controller('appCtrl', require('./appCtrl'))
   .controller('userCtrl', require('./userCtrl'))
   .controller('userListCtrl', require('./userListCtrl'))
-  .controller('chatCtrl', require('./chatCtrl'))
   .factory('firebaseFactory', require('./firebaseFactory'))
   .constant('FIRE_URL', 'https://material-sandbox.firebaseio.com/');
 })();
