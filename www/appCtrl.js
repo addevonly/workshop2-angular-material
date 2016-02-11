@@ -2,11 +2,20 @@
   'use strict';
 
   module.exports = appCtrl;
-  appCtrl.$inject = ['$firebaseArray', 'firebaseFactory']
 
-  function appCtrl($firebaseArray, firebaseFactory) {
+  appCtrl.$inject = ['$state'];
+
+  function appCtrl($state) {
     var vm = this;
+    vm.goToUsers = goToUsers;
 
-    vm.users = firebaseFactory.getAll('user');
+    function goToUsers() {
+      $state.go('userList');
+    }
+
+    function goToNewUser() {
+      console.log('user');
+      $state.go('user');
+    }
   }
 })();

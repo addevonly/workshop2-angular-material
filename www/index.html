@@ -16,21 +16,9 @@
   </head>
 
   <body ng-controller='appCtrl as vm'>
-    <h2>Step 1 - List of Users</h2>
-    <p>
-      Iterate over the array using ng-repeat and print the name and email
-      of each user
-    </p>
-
-    <div><a target="_blank" href="https://material-sandbox.firebaseio.com/user">Firebase instance</a></div>
-    <p>
-      A sample user object in the array:
-        { data:
-          {
-            name: "Jordan",
-            email: "jordan@aol.com"
-          }
-        }
-    </p>
+    <a ui-sref='chat'>Chat</a>
+    <a ui-sref='userList'>User List</a>
+    <a ui-sref='user'>New User</a>
+    <div flex ui-view='view'></div>
   </body>
 </html>
