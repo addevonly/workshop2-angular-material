@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html ng-app='app'>
   <head>
-    <title>Workshop 2 Step 3</title>
+    <title>Workshop 2 Step 4</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"></link>
     <link rel='stylesheet' href='/bower_components/angular-material/angular-material.min.css'></link>
     <script src='/bower_components/angular/angular.min.js'></script>
@@ -29,7 +29,9 @@
     <div>Search: <input ng-model='vm.search'></div>
     <br>
     <div ng-repeat='user in vm.users | filter: vm.search | orderBy:"data.name"'>
-      {{user.data.name}} - {{user.data.email}}
+      <input ng-model='user.data.name' ng-change='vm.editUser(user)'>
+      <input ng-model='user.data.email' ng-change='vm.editUser(user)'>
+      <button ng-click='vm.deleteUser(user)'>Delete</button>
     </div>
 
     <br><br>
