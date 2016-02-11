@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html ng-app='app'>
   <head>
-    <title>Workshop 2 Step 1</title>
+    <title>Workshop 2 Step 3</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"></link>
     <link rel='stylesheet' href='/bower_components/angular-material/angular-material.min.css'></link>
     <script src='/bower_components/angular/angular.min.js'></script>
@@ -16,15 +16,29 @@
   </head>
 
   <body ng-controller='appCtrl as vm'>
-    <h2>Step 2 - Create new user</h2>
+    <h2>Step 3 - Modify and Delete Users</h2>
     Search: <input ng-model='vm.search'>
-    <div ng-repeat='user in vm.users | filter:vm.search | orderBy:data.name'>
+    <div ng-repeat='user in vm.users | filter: vm.search | orderBy:"data.name"'>
       {{user.data.name}} - {{user.data.email}}
     </div>
 
-    <p>Write an ng-submit form with an input for a name and email address</p>
-    <a target='_blank' href='https://docs.angularjs.org/api/ng/directive/ngSubmit'>ng-submit</a>
+    <br><br>
+    <div>Create new user:</div>
+    <form ng-submit='vm.addNewUser(newUser)'>
+      Name: <input ng-model='newUser.name'><br>
+      Email: <input type='email' ng-model='newUser.email'><br>
+      <button ng-disabled='!newUser.name || !newUser.email'>Submit</button>
+    </form>
 
+    <br><br>
+
+    <div>Complete the following:</div>
+    <ol>
+      <li>Use ng-change to modify the fields</li>
+      <li>Add a delete button and function to remove a user from Firebase</li>
+    </ol>
+
+    <a target='_blank' href='https://docs.angularjs.org/api/ng/directive/ngChange'>ng-change</a><br>
     <a target='_blank' href='https://material-sandbox.firebaseio.com/user'>Firebase User Instance</a>
   </body>
 </html>

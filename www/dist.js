@@ -25,6 +25,8 @@
 
     vm.users = firebaseFactory.getAll('user');
     vm.addNewUser = addNewUser;
+    vm.updateUser = updateUser;
+    vm.deleteUser = deleteUser;
 
     /*
       addNewUser
@@ -35,8 +37,29 @@
     */
     function addNewUser(newUser) {
       firebaseFactory.insertDb('user', newUser);
+      newUser.name = '';
+      newUser.email = '';
+    }
 
-      // TODO: clear name and email
+    /*
+      updateUser
+      Given a user object, call the firebaseFactory service method to
+      update the user at the Firebase path 'user'
+      @param TODO
+    */
+
+    function updateUser() {
+        // TODO, look for a suitable method in the firebaseFactory service
+    }
+
+    /*
+      deleteUser
+      Given a user object, call the firebaseFactory service method to
+      delete that user at the Firebase path 'user'
+      @param TODO
+    */
+    function deleteUser() {
+        // TODO, look for a suitable method in the firebaseFactory service
     }
   }
 })();
