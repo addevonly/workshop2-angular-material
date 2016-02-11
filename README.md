@@ -31,12 +31,3 @@ If any changes are made to the server code(server.js) run:
 ```bash
 node server
 ```
-
-To start theserver using Nodemon, in another terminal session in the main directory, run:
-```bash
-nodemon server
-```
-
-[nodemon]: http://nodemon.io/
-[browserify]: http://browserify.org/
-[watchify]: https://www.npmjs.com/package/watchify
