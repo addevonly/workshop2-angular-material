@@ -13,7 +13,7 @@ The following Bower components of note are used:
  - Firebase
  - Angular Fire
 
-Exporting the path in local bashrc will make executable of node modules available on command line. 
+Exporting the path like below will make executable of node modules available on command line. 
 ```bash
 export PATH="./node_modules/.bin:$PATH"
 ```
