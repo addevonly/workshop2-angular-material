@@ -3,19 +3,11 @@
 
   module.exports = appCtrl;
 
-  appCtrl.$inject = ['$state'];
+  appCtrl.$inject = ['$firebaseArray', 'firebaseFactory'];
 
-  function appCtrl($state) {
+  function appCtrl($firebaseArray, firebaseFactory) {
     var vm = this;
-    vm.goToUsers = goToUsers;
 
-    function goToUsers() {
-      $state.go('userList');
-    }
-
-    function goToNewUser() {
-      console.log('user');
-      $state.go('user');
-    }
+    vm.users = firebaseFactory.getAll('user');
   }
 })();

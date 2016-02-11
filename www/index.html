@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html ng-app='app'>
   <head>
-    <title>Angular Firebase</title>
+    <title>Workshop 2 Step 1</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"></link>
     <link rel='stylesheet' href='/bower_components/angular-material/angular-material.min.css'></link>
     <script src='/bower_components/angular/angular.min.js'></script>
@@ -16,9 +16,9 @@
   </head>
 
   <body ng-controller='appCtrl as vm'>
-    <a ui-sref='chat'>Chat</a>
-    <a ui-sref='userList'>User List</a>
-    <a ui-sref='user'>New User</a>
-    <div flex ui-view='view'></div>
+    <h2>Step 1 - List of Users from Firebase Instance</h2>
+    <p>Iterate over the array using ng-repeat and print the name and email of each user</p>
+    <a target='_blank' href='https://material-sandbox.firebaseio.com/user'>Firebase User Instance</a>
+    <p>A sample user object in the array: { data: { name: "Jordan", email: "jordan@aol.com" } }</p>
   </body>
 </html>
