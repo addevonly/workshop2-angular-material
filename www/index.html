@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html ng-app='app'>
   <head>
-    <title>Workshop 2 Step 1</title>
+    <title>Workshop 2 Step 2</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"></link>
     <link rel='stylesheet' href='/bower_components/angular-material/angular-material.min.css'></link>
     <script src='/bower_components/angular/angular.min.js'></script>
@@ -17,14 +17,21 @@
 
   <body ng-controller='appCtrl as vm'>
     <h2>Step 2 - Create new user</h2>
-    Search: <input ng-model='vm.search'>
-    <div ng-repeat='user in vm.users | filter:vm.search | orderBy:data.name'>
+    <div>Search: <input ng-model='vm.search'></div>
+    <br>
+    <div ng-repeat='user in vm.users | filter:vm.search | orderBy:"data.name"'>
       {{user.data.name}} - {{user.data.email}}
     </div>
 
-    <p>Write an ng-submit form with an input for a name and email address</p>
-    <a target='_blank' href='https://docs.angularjs.org/api/ng/directive/ngSubmit'>ng-submit</a>
+    <br>
+    <div>Complete the following:</div>
+    <ol>
+      <li>Write an ng-submit form with an input for a name and email address</li>
+      <li>Use ng-disable to disable the button until the name and email are present</li>
+    </ol>
 
+    <a target='_blank' href='https://docs.angularjs.org/api/ng/directive/ngSubmit'>ng-submit</a><br>
+    <a target='_blank' href='https://docs.angularjs.org/api/ng/directive/ngDisable'>ng-disable</a><br>
     <a target='_blank' href='https://material-sandbox.firebaseio.com/user'>Firebase User Instance</a>
   </body>
 </html>
