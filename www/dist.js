@@ -33,6 +33,7 @@
   'use strict';
 
   module.exports = function($stateProvider, $urlRouterProvider) {
+    // Default to the userList state if a state is not specified
     $urlRouterProvider.otherwise('/userList');
 
     $stateProvider
@@ -148,11 +149,11 @@
 (function() {
   'use strict';
 
+  module.exports = userCtrl;
   userCtrl.$inject = ['firebaseFactory'];
 
   function userCtrl(firebaseFactory) {
     var vmc = this;
-
     vmc.addNewUser = addNewUser;
 
     /*

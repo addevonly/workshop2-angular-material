@@ -2,6 +2,7 @@
   'use strict';
 
   module.exports = function($stateProvider, $urlRouterProvider) {
+    // Default to the userList state if a state is not specified
     $urlRouterProvider.otherwise('/userList');
 
     $stateProvider

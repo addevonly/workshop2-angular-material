@@ -1,11 +1,11 @@
 (function() {
   'use strict';
 
+  module.exports = userCtrl;
   userCtrl.$inject = ['firebaseFactory'];
 
   function userCtrl(firebaseFactory) {
     var vmc = this;
-
     vmc.addNewUser = addNewUser;
 
     /*
