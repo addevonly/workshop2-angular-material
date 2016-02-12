@@ -1,43 +1,29 @@
-# Firebase and Angular-Material Sandbox
+# Workshop 2 - Step 3
 
-This is a sandbox application using Angular Material and Firebase.
+Stop the server (Ctrl+c), check out the step2 branch, and then start the server. After browsing to http://localhost:8080 again, you will see that Step 2 has been completed and you now have instructions for step 3.
 
-The SPA is served using NodeJS and Express. Firebase is used as the real time database backend. The link to the Firebase server is https://material-sandbox.firebaseio.com/.
-
-Presently the application consists of 3 UI router views; a simple chat, a list of users, and a new user form.
-
-The following Bower components of note are used:
- - Angular
- - Angular Material
- - UI-Router
- - Firebase
- - Angular Fire
-
-Exporting the path in local bashrc will make executable of node modules available on command line. 
 ```bash
-export PATH="./node_modules/.bin:$PATH"
+git checkout step3
+node server
 ```
 
-Please run npm install and bower install to download all of the needed packages.
-
-**The build scripts in package.json require the following to be installed globally:**
- - [Browserify][browserify] (npm install -g browserify)
- - [Watchify][watchify] (npm install -g watchify)
-
-The application uses CommonJS commands for modularization. The distinguishable difference is that 'require' and 'module.exports' are used, both commands common in NodeJS. Because of this, Browserify **must** be used to bundle the application since it supports 'require' and modules.
-
-To start the bundling process, run in the main directory:
+In another terminal, start the NPM runner that will automatically bundle your code upon any code changes.
 ```bash
 npm start
 ```
 
-[Nodemon][nodemon] or another node watcher is recommended (npm install -g nodemon) for monitoring any changes in the source and automatically restarting the server.
+###Summary###
+Now we want to modify and delete existing 
 
-To start theserver using Nodemon, in another terminal session in the main directory, run:
-```bash
-nodemon server
-```
+We once again will use the firebaseFactory. This time we are inserting a new object into the table. Write a form where you can submit a new name and email address. And then complete the createNewUser() function in appCtrl.js.
 
-[nodemon]: http://nodemon.io/
-[browserify]: http://browserify.org/
-[watchify]: https://www.npmjs.com/package/watchify
+Since we are using Firebase, all updates will be automatically pushed out to connected clients. So you may see new users being added to the page while you are still developing. Subsequently any new users you add will immediately be pushed to other clients as well.
+
+###Instructions###
+1. Write an ng-submit form with an input for a name and email address
+ * [ngSubmit Directive](https://docs.angularjs.org/api/ng/directive/ngSubmit)
+ * We recommend creating a single object with a name and email attribute
+ * Make sure you are passing that object in with the createNewUser() call in index.html
+2. Use ng-disabled to disable the button until the name and email are present
+ * If you have not already, add the type='email' attribute to the email input element
+ * [ngDisabled](https://docs.angularjs.org/api/ng/directive/ngDisabled) - make sure you include the 'd' at the end of Disabled!
