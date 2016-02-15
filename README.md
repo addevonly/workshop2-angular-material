@@ -1,9 +1,9 @@
 # Workshop 2 - Step 2
 
-Stop the server (Ctrl+c), check out the step2 branch, and then start the server. After browsing to http://localhost:8080 again, you will see that Step 1 has been completed and you now have instructions for step 2.
+Stop the server (Ctrl+c), check out the step2 branch, and then start the server. Under normal circumstances you DO NOT want to append the -f force flag since this will discard any changes in the previous working branch. But since we are instead using the Git branches as tutorial steps, we should use the force flag to move to the next step. After browsing to http://localhost:8080 again, you will see that Step 1 has been completed and you now have instructions for step 2.
 
 ```bash
-git checkout step2
+git checkout -f step2
 node server
 ```
 
