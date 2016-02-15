@@ -22,10 +22,17 @@
 
   module.exports = appCtrl;
 
-  appCtrl.$inject = ['$firebaseArray', 'firebaseFactory'];
+  appCtrl.$inject = ['firebaseFactory'];
 
-  function appCtrl($firebaseArray, firebaseFactory) {
+  function appCtrl(firebaseFactory) {
     var vm = this;
+
+    vm.tabs = firebaseFactory.getAll('tabs');
+    vm.selectedIndex = 0;
+
+    // $scope.$on('$stateChange', function(toState) {
+    //   vm.selectedIndex = toState.selectedTab;
+    // });
   }
 })();
 
@@ -203,7 +210,7 @@
     function addNewUser(newUser) {
       firebaseFactory.insertDb('user', newUser);
       newUser.name = '';
-      newUser.email = '';
+      newUser.email = ''
     }
   }
 })();

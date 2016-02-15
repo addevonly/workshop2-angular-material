@@ -1,12 +1,20 @@
 <h3>Create new user:</h3>
 <form ng-submit='vmc.addNewUser(newUser)'>
-  Name: <input ng-model='newUser.name'><br>
-  Email: <input type='email' ng-model='newUser.email'><br>
-  <button ng-disabled='!newUser.name || !newUser.email'>Submit</button>
+  <md-content>
+    <div>
+      <md-input-container>
+        <label>Name</label>
+        <input ng-model='newUser.name'>
+      </md-input-container>
+    </div>
+    <div>
+      <md-input-container>
+        <label>Email</label>
+        <input type='email' ng-model='newUser.email'>
+      </md-input-container>
+    </div>
+    <div>
+      <md-button class="md-raised" ng-disabled='!newUser.name || !newUser.email'>Submit</md-button>
+    </div>
+  </md-content>
 </form>
-
-<br><br>
-<div>Update the following in the create new user view:</div>
-<ol>
-  <li>New user <a target='_blank' href='https://material.angularjs.org/latest/demo/input'>form and inputs</a></li>
-</ol>

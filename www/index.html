@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html ng-app='app'>
   <head>
-    <title>Workshop 2 Step 6</title>
+    <title>Workshop 2 - Jordan's Branch</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"></link>
     <link rel='stylesheet' href='/bower_components/angular-material/angular-material.min.css'></link>
     <script src='/bower_components/angular/angular.min.js'></script>
@@ -16,26 +16,14 @@
   </head>
 
   <body ng-controller='appCtrl as vm'>
-    <h2>Step 6 - Angular Material</h2>
-
-    <a ui-sref='chat'>Chat</a>
-    <a ui-sref='userList'>User List</a>
-    <a ui-sref='user'>New User</a>
-
-
-    <!-- The selected view is placed in this div -->
-    <div flex ui-view='view'></div>
-    <br><br>
-
-    <div>Complete the following in the main index view:</div>
-    <ol>
-      <li>Replace the links with <a target='_blank' href='https://material.angularjs.org/latest/demo/tabs'>tabs</a></li>
-    </ol>
-
-    <p>Use the following format for posting/displaying messages: { name: 'Jordan', message: 'Hi' }</p>
-
-    <a target='_blank' href='https://material.angularjs.org'>Angular Material</a><br>
-    <a target='_blank' href='https://material-sandbox.firebaseio.com/user'>Firebase User Instance</a><br>
-    <a target='_blank' href='https://material-sandbox.firebaseio.com/user'>Firebase Chat Instance</a>
+    <md-content>
+      <md-tabs md-selected='vm.selectedIndex'md-stretch-tabs='always' md-dynamic-height>
+        <md-tab ng-repeat='tab in vm.tabs' ui-sref='{{tab.data.state}}' label='{{tab.data.title}}'>
+          <md-tab-body>
+            <div ui-view='view'></div>
+          </md-tab-body>
+        </md-tab>
+      </md-tabs>
+    </md-content>
   </body>
 </html>

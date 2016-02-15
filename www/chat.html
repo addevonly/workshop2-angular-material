@@ -1,20 +1,33 @@
 <h3>Chat</h3>
-<div ng-repeat='post in vmc.chat'>
-  <strong>{{post.data.name}}:</strong> {{post.data.message}}
-</div>
+<md-content>
+  <md-list>
+    <md-list-item class="md-2-line" ng-repeat='post in vmc.chat'>
+      <img ng-src='http://toronto.bluejays.mlb.com/tor/images/y2003_history/im_logo_1_110_94.gif' class="md-avatar" alt="Icon" />
+      <div class="md-list-item-text">
+        <h3>{{post.data.name}}:</h3>
+        <p>{{post.data.message}}</p>
+      </div>
+    </md-list-item>
+  </md-list>
+</md-content>
 
-<br><br>
 
 <form ng-submit='vmc.postChat(name, message)'>
-  Name: <input ng-model='name'><br>
-  Message: <input ng-model='message'><br>
-  <button ng-disabled='!name || !message' type='submit'>Submit</button>
+  <div>
+    <md-input-container>
+      <label>Name</label>
+      <md-select ng-model='name'>
+        <md-option ng-repeat='user in vmc.savedUsers' value={{user.data.name}}>
+          {{user.data.name}}
+        </md-option>
+      </md-select>
+    </md-input-container>
+  </div>
+  <div>
+    <md-input-container>
+      <label>Message</label>
+      <input ng-model='message'>
+    </md-input-container>
+  </div>
+  <md-button class="md-raised md-primary" ng-disabled='!name || !message' type='submit'>Submit</md-button>
 </form>
-
-<br><br>
-<div>Update the following in the chat view:</div>
-<ol>
-  <li>Chat <a target='_blank' href='https://material.angularjs.org/latest/demo/list'>list</a></li>
-  <li>Submit <a target='_blank' href='https://material.angularjs.org/latest/demo/input'>form and inputs</a></li>
-  <li><a target='_blank' href='https://material.angularjs.org/latest/demo/button'>Buttons</a></li>
-</ol>
