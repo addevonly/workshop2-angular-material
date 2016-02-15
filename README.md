@@ -20,15 +20,9 @@ Angular Material only recently released Version 1.0 so many of its components ar
 This final step is focused on browsing the Angular Material documentation to find appropriate directives and services to incorporate into our application to make it responsive.
 
 ###Instructions###
-Chat
-1. Replace Name input element with a dropdown selector to choose users from the Users Firebase instance
-2. Update the list, form, and buttons to be responsive
-
-User List + New User
-1. Where applicable, update the list, buttons, form to be responsive
-
-Index
-1. Replace the Chat, User List, New User links with tabs
+1. chat.html - Replace Name input element with a dropdown selector to choose users from the Users Firebase instance
+2. All templates - update the lists, forms, buttons, etc to be responsive
+3. index.html - Replace the Chat, User List, New User links with tabs
 
 ###Epilogue###
 When you have completed the above instructions or you have reached a stopping point, we can now conduct a quick Git + Github exercise.
