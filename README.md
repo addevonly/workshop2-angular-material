@@ -3,27 +3,27 @@
 Stop the server (Ctrl+c), check out the step3 branch, and then start the server again. After browsing to http://localhost:8080 again, you will see that Step 2 has been completed and you now have instructions for step 3.
 
 ```bash
-git checkout step3
+git checkout -f step3
 node server
 ```
 
-In another terminal, start the NPM runner that will automatically bundle your code upon any code changes.
+In another terminal, start the NPM runner that will automatically bundle your code upon any code changes. Once again note that if you already ran this command in a previous step, the watchify will detect the changes from the checkout and rebuild a new dist.js.
 ```bash
 npm start
 ```
 
 ###Summary###
-Now we want to modify and delete existing 
-
-We once again will use the firebaseFactory. This time we are inserting a new object into the table. Write a form where you can submit a new name and email address. And then complete the createNewUser() function in appCtrl.js.
-
-Since we are using Firebase, all updates will be automatically pushed out to connected clients. So you may see new users being added to the page while you are still developing. Subsequently any new users you add will immediately be pushed to other clients as well.
+Now that we can add new users, we can add functionality to modify and delete users. In the previous step, we used the ngSubmit directive to submit a form. Now we can utilize both ngChange and ngClick to initiate an event.
 
 ###Instructions###
-1. Write an ng-submit form with an input for a name and email address
- * [ngSubmit Directive](https://docs.angularjs.org/api/ng/directive/ngSubmit)
- * We recommend creating a single object with a name and email attribute
- * Make sure you are passing that object in with the createNewUser() call in index.html
-2. Use ng-disabled to disable the button until the name and email are present
- * If you have not already, add the type='email' attribute to the email input element
- * [ngDisabled](https://docs.angularjs.org/api/ng/directive/ngDisabled) - make sure you include the 'd' at the end of Disabled!
+1. Change name and email to input fields
+ * Since we want to edit the user's name and email address, we need to modify the contents inside the ng-repeat div to use an input element
+2. Use ng-change so the Firebase user table is updated upon an inputted change
+ * Add the ngChange directive as an attribute to each input.
+ * [ngChange](https://docs.angularjs.org/api/ng/directive/ngChange)
+ * Complete the updateUser() method in appCtrl.js
+ * Refer to firebaseFactory.js to find the appropriate service method to call in updateUser()
+3. Add a delete button and function to remove a user from Firebase
+ * [ngClick](https://docs.angularjs.org/api/ng/directive/ngClick)
+ * Complete the deleteUser() method in appCtrl.js
+ * Refer to firebaseFactory.js to find the appropriate service method to call in deleteUser()
