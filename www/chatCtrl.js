@@ -2,6 +2,7 @@
   'use strict';
 
   module.exports = chatCtrl;
+
   chatCtrl.$inject = ['firebaseFactory'];
 
   function chatCtrl(firebaseFactory) {
@@ -11,17 +12,14 @@
     vmc.chat = firebaseFactory.getAll('chat');
     vmc.savedUsers = firebaseFactory.getAll('user');
 
-    function postChat() {
-      if(vmc.name && vmc.message) {
-        var newMessage = {
-          name: vmc.name,
-          message: vmc.message,
-        };
+    function postChat(name, message) {
+      var newMessage = {
+        name: name,
+        message: message,
+      };
 
-        firebaseFactory.insertDb('chat', newMessage);
-        vmc.message = '';
-      }
+      firebaseFactory.insertDb('chat', newMessage);
+      message = '';
     }
-
   }
 })();

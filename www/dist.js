@@ -9,8 +9,8 @@
   ])
   .config(['$stateProvider', '$urlRouterProvider', require('./appRouter')])
   .controller('appCtrl', require('./appCtrl'))
-  .controller('userListCtrl', require('./userListCtrl'))
   .controller('userCtrl', require('./userCtrl'))
+  .controller('userListCtrl', require('./userListCtrl'))
   .controller('chatCtrl', require('./chatCtrl'))
   .factory('firebaseFactory', require('./firebaseFactory'))
   .constant('FIRE_URL', 'https://material-sandbox.firebaseio.com/');
@@ -22,20 +22,17 @@
 
   module.exports = appCtrl;
 
-  appCtrl.$inject = ['$state'];
+  appCtrl.$inject = ['firebaseFactory'];
 
-  function appCtrl($state) {
+  function appCtrl(firebaseFactory) {
     var vm = this;
-    vm.goToUsers = goToUsers;
 
-    function goToUsers() {
-      $state.go('userList');
-    }
+    vm.tabs = firebaseFactory.getAll('tabs');
+    vm.selectedIndex = 0;
 
-    function goToNewUser() {
-      console.log('user');
-      $state.go('user');
-    }
+    // $scope.$on('$stateChange', function(toState) {
+    //   vm.selectedIndex = toState.selectedTab;
+    // });
   }
 })();
 
@@ -44,9 +41,19 @@
   'use strict';
 
   module.exports = function($stateProvider, $urlRouterProvider) {
+    // Default to the userList state if a state is not specified
     $urlRouterProvider.otherwise('/chat');
 
     $stateProvider
+    .state('chat', {
+      url: '/chat',
+      views: {
+        'view': {
+          templateUrl: 'chat.html',
+          controller: 'chatCtrl as vmc',
+        }
+      }
+    })
     .state('userList', {
       url: '/userList',
       views: {
@@ -64,15 +71,6 @@
           controller: 'userCtrl as vmc',
         }
       }
-    })
-    .state('chat', {
-      url: '/chat',
-      views: {
-        'view': {
-          templateUrl: 'chat.html',
-          controller: 'chatCtrl as vmc',
-        }
-      }
     });
   };
 })();
@@ -82,6 +80,7 @@
   'use strict';
 
   module.exports = chatCtrl;
+
   chatCtrl.$inject = ['firebaseFactory'];
 
   function chatCtrl(firebaseFactory) {
@@ -91,18 +90,15 @@
     vmc.chat = firebaseFactory.getAll('chat');
     vmc.savedUsers = firebaseFactory.getAll('user');
 
-    function postChat() {
-      if(vmc.name && vmc.message) {
-        var newMessage = {
-          name: vmc.name,
-          message: vmc.message,
-        };
+    function postChat(name, message) {
+      var newMessage = {
+        name: name,
+        message: message,
+      };
 
-        firebaseFactory.insertDb('chat', newMessage);
-        vmc.message = '';
-      }
+      firebaseFactory.insertDb('chat', newMessage);
+      message = '';
     }
-
   }
 })();
 
@@ -194,67 +190,37 @@
 })();
 
 },{}],6:[function(require,module,exports){
-// (function() {
-//   'use strict';
-//
-//   module.exports = userCtrl;
-//
-//   userCtrl.$inject = ['firebaseFactory'];
-//
-//   function userCtrl(firebaseFactory) {
-//     var vmc = this;
-//     vmc.addUser = addUser;
-//
-//     function addUser(newUser) {
-//       //insert code
-//
-//       //firebaseFactory.insertDb('user', newUser);
-//     }
-//
-//   }
-// })
-
 (function() {
   'use strict';
 
   module.exports = userCtrl;
-
   userCtrl.$inject = ['firebaseFactory'];
 
   function userCtrl(firebaseFactory) {
     var vmc = this;
-    vmc.addUser = addUser;
+    vmc.addNewUser = addNewUser;
 
-    function addUser(newUser) {
+    /*
+      addNewUser
+      Method that calls firebaseFactory.insertDb to push a new user to the
+      Firebase instance
+      After insert call, clears the name and email
+      @param newUser: JSON object with the name and email
+    */
+    function addNewUser(newUser) {
       firebaseFactory.insertDb('user', newUser);
       newUser.name = '';
-      newUser.email = '';
+      newUser.email = ''
     }
   }
 })();
 
 },{}],7:[function(require,module,exports){
-// (function() {
-//   'use strict';
-//
-//   module.exports = userListCtrl;
-//   userListCtrl.$inject = ['$firebaseArray', 'firebaseFactory']
-//
-//   function userListCtrl($firebaseArray, firebaseFactory) {
-//     var vmc = this;
-//
-//     vmc.users = firebaseFactory.getAll('user');
-//   }
-//
-// })
-
 (function() {
   'use strict';
 
   module.exports = userListCtrl;
   userListCtrl.$inject = ['$firebaseArray', 'firebaseFactory']
-  // now $firebaseObject, $firebaseArray, $firebaseAuth services are available
-  //    to be injected into any controller, service, or factory
 
   function userListCtrl($firebaseArray, firebaseFactory) {
     var vmc = this;
@@ -263,14 +229,25 @@
     vmc.updateUser = updateUser;
     vmc.deleteUser = deleteUser;
 
+    /*
+      updateUser
+      Given a user object, call the firebaseFactory service method to
+      update the user at the Firebase path 'user'
+      @param user: User object
+    */
     function updateUser(user){
       firebaseFactory.updateDb('user', user);
     }
 
+    /*
+      deleteUser
+      Given a user object, call the firebaseFactory service method to
+      delete that user at the Firebase path 'user'
+      @param user: User object
+    */
     function deleteUser(user) {
       firebaseFactory.deleteDb('user', user);
     }
-
   }
 })();
 

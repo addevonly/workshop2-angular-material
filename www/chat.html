@@ -1,31 +1,33 @@
-<h2>User Chat</h2>
+<h3>Chat</h3>
 <md-content>
   <md-list>
-    <md-list-item ng-repeat='post in vmc.chat'>
-      <div layout='column'>
-        <strong>{{post.data.name}}:</strong> {{post.data.message}}
+    <md-list-item class="md-2-line" ng-repeat='post in vmc.chat'>
+      <img ng-src='http://toronto.bluejays.mlb.com/tor/images/y2003_history/im_logo_1_110_94.gif' class="md-avatar" alt="Icon" />
+      <div class="md-list-item-text">
+        <h3>{{post.data.name}}:</h3>
+        <p>{{post.data.message}}</p>
       </div>
     </md-list-item>
   </md-list>
-
-  <form ng-submit='vmc.postChat()'>
-    <div>
-      <md-input-container>
-        <label>Name</label>
-        <md-select ng-model='vmc.name'>
-          <md-option ng-repeat='user in vmc.savedUsers' value={{user.data.name}}>
-            {{user.data.name}}
-          </md-option>
-        </md-select>
-      </md-input-container>
-    </div>
-    <div>
-      <md-input-container>
-        <label>Message</label>
-        <input ng-model='vmc.message' type='text'>
-      </md-input-container>
-    </div>
-    <md-button type='submit'>Submit</md-button>
-
-
 </md-content>
+
+
+<form ng-submit='vmc.postChat(name, message)'>
+  <div>
+    <md-input-container>
+      <label>Name</label>
+      <md-select ng-model='name'>
+        <md-option ng-repeat='user in vmc.savedUsers' value={{user.data.name}}>
+          {{user.data.name}}
+        </md-option>
+      </md-select>
+    </md-input-container>
+  </div>
+  <div>
+    <md-input-container>
+      <label>Message</label>
+      <input ng-model='message'>
+    </md-input-container>
+  </div>
+  <md-button class="md-raised md-primary" ng-disabled='!name || !message' type='submit'>Submit</md-button>
+</form>

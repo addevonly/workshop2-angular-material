@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html ng-app='app'>
   <head>
-    <title>Angular Firebase</title>
+    <title>Workshop 2 - Jordan's Branch</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"></link>
     <link rel='stylesheet' href='/bower_components/angular-material/angular-material.min.css'></link>
     <script src='/bower_components/angular/angular.min.js'></script>
@@ -16,9 +16,14 @@
   </head>
 
   <body ng-controller='appCtrl as vm'>
-    <a ui-sref='chat'>Chat</a>
-    <a ui-sref='userList'>User List</a>
-    <a ui-sref='user'>New User</a>
-    <div flex ui-view='view'></div>
+    <md-content>
+      <md-tabs md-selected='vm.selectedIndex'md-stretch-tabs='always' md-dynamic-height>
+        <md-tab ng-repeat='tab in vm.tabs' ui-sref='{{tab.data.state}}' label='{{tab.data.title}}'>
+          <md-tab-body>
+            <div ui-view='view'></div>
+          </md-tab-body>
+        </md-tab>
+      </md-tabs>
+    </md-content>
   </body>
 </html>

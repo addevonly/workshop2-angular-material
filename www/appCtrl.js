@@ -3,19 +3,16 @@
 
   module.exports = appCtrl;
 
-  appCtrl.$inject = ['$state'];
+  appCtrl.$inject = ['firebaseFactory'];
 
-  function appCtrl($state) {
+  function appCtrl(firebaseFactory) {
     var vm = this;
-    vm.goToUsers = goToUsers;
 
-    function goToUsers() {
-      $state.go('userList');
-    }
+    vm.tabs = firebaseFactory.getAll('tabs');
+    vm.selectedIndex = 0;
 
-    function goToNewUser() {
-      console.log('user');
-      $state.go('user');
-    }
+    // $scope.$on('$stateChange', function(toState) {
+    //   vm.selectedIndex = toState.selectedTab;
+    // });
   }
 })();
