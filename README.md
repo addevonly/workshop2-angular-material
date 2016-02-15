@@ -1,43 +1,44 @@
-# Firebase and Angular-Material Sandbox
+# Workshop 2 - Step 6
 
-This is a sandbox application using Angular Material and Firebase.
+Stop the server (Ctrl+c), check out the step5 branch, and then start the server again.
 
-The SPA is served using NodeJS and Express. Firebase is used as the real time database backend. The link to the Firebase server is https://material-sandbox.firebaseio.com/.
-
-Presently the application consists of 3 UI router views; a simple chat, a list of users, and a new user form.
-
-The following Bower components of note are used:
- - Angular
- - Angular Material
- - UI-Router
- - Firebase
- - Angular Fire
-
-Exporting the path in local bashrc will make executable of node modules available on command line. 
 ```bash
-export PATH="./node_modules/.bin:$PATH"
+git checkout -f step6
+node server
 ```
 
-Please run npm install and bower install to download all of the needed packages.
-
-**The build scripts in package.json require the following to be installed globally:**
- - [Browserify][browserify] (npm install -g browserify)
- - [Watchify][watchify] (npm install -g watchify)
-
-The application uses CommonJS commands for modularization. The distinguishable difference is that 'require' and 'module.exports' are used, both commands common in NodeJS. Because of this, Browserify **must** be used to bundle the application since it supports 'require' and modules.
-
-To start the bundling process, run in the main directory:
+If needed, start the NPM runner in another terminal.
 ```bash
 npm start
 ```
 
-[Nodemon][nodemon] or another node watcher is recommended (npm install -g nodemon) for monitoring any changes in the source and automatically restarting the server.
+###Summary###
+The final step in the workshop is to add [Angular Material](https://material.angularjs.org) markup. Based on their website, "Angular Material is the reference implementation of [Google's Material Design specification](https://www.google.com/design/spec/material-design/introduction.html). Then Material Design is a visual language to allow for a unified experience across platforms and design sizes. Effectively specifications to design a response website. Note that a responsive website must incorporate touch, voice, mouse, and keyboard inputs. There is also a subset focusing on [Accessible Rich Internet Applications (ARIA)](https://en.wikipedia.org/wiki/WAI-ARIA) which is a spec for designing webpages accessible to all users, including those with visual, audio, and motor skill impairments or disabilities.
 
-To start theserver using Nodemon, in another terminal session in the main directory, run:
-```bash
-nodemon server
-```
+Angular Material only recently released Version 1.0 so many of its components are still under development. However many shops have many utilizing Angular Material while it was still in beta.
 
-[nodemon]: http://nodemon.io/
-[browserify]: http://browserify.org/
-[watchify]: https://www.npmjs.com/package/watchify
+This final step is focused on browsing the Angular Material documentation to find appropriate directives and services to incorporate into our application to make it responsive.
+
+###Instructions###
+Chat
+1. Replace Name input element with a dropdown selector to choose users from the Users Firebase instance
+2. Update the list, form, and buttons to be responsive
+
+User List + New User
+1. Where applicable, update the list, buttons, form to be responsive
+
+Index
+1. Replace the Chat, User List, New User links with tabs
+
+###Epilogue###
+When you have completed the above instructions or you have reached a stopping point, we can now conduct a quick Git + Github exercise.
+
+1. Create a Github [issue](https://github.com/addevonly/workshop2-angular-material/issues/new). Title it "Create [your name]'s workshop branch". Submit the issue.
+2. While you are in the step 6 branch (or move to the step6 branch if you are not already), create a new branch named after yourself. The -b flag creates a new branch and the checkout command takes you to that newly created branch.
+ *```git checkout -b [your name]```
+3. If you are satisfied with your changes, add your changes. The period after the git add includes all added/deleted/modified files.
+ * ```git add .```
+4. Now we want to commit our changes. To tie our commit to the opened issue, make sure to include "Fixes #[issue #] where [issue #] is the Github issue number you created. When we push to the remote server in the final step, the opened issue will automatically be closed. 
+ * ```git commit -m "Fixes #[issue #] My completed workshop with Angular Material markup"```
+5. Now do a push from your repository to the newly created branch. The new branch will now appear in Github
+ * ```git push origin [your branch]```
