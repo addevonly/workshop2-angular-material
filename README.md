@@ -7,7 +7,8 @@ git checkout step2
 node server
 ```
 
-In another terminal, start the NPM runner that will automatically bundle your code upon any code changes.
+In another terminal, start the NPM runner that will automatically bundle your code upon any code changes. Note that if you were already running this command in step 1, you do not need to re-run this step as the watchify Node app will detect a change when you checked out the step2 branch.
+
 ```bash
 npm start
 ```
