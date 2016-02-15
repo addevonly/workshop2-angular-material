@@ -45,7 +45,7 @@ The application uses CommonJS commands for modularization. The distinguishable d
 
 Unlike a lot of legacy Javascript libraries, we want a very modular architecture consisting of many smaller script files. We also want to organize our directory so scripts and templates reside together.
 
-***Bundling***
+###Bundling###
 After the Node/Express server pushes the index.html file to the client, the template must make an HTTP call for each script/stylesheet. In the case of a modular Angular app, there could be dozens of script files so this could severely bog down a page load. Again to differentiate a legacy website from an Angular application, the former would serve a page with each state/view change so generally only one script/stylesheet needs to be loaded at a time. With an Angular application, all scripts/sheets need to be loaded at the beginning.
 
 To limit the number of calls, the Angular application is bundled into one dist.js script (dist = distribution).
