@@ -1,6 +1,6 @@
 # Workshop 2 - Step 3
 
-Stop the server (Ctrl+c), check out the step2 branch, and then start the server. After browsing to http://localhost:8080 again, you will see that Step 2 has been completed and you now have instructions for step 3.
+Stop the server (Ctrl+c), check out the step3 branch, and then start the server again. After browsing to http://localhost:8080 again, you will see that Step 2 has been completed and you now have instructions for step 3.
 
 ```bash
 git checkout step3
