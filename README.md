@@ -1,43 +1,28 @@
-# Firebase and Angular-Material Sandbox
+# Workshop 2 - Step 5
 
-This is a sandbox application using Angular Material and Firebase.
+Stop the server (Ctrl+c), check out the step5 branch, and then start the server again.
 
-The SPA is served using NodeJS and Express. Firebase is used as the real time database backend. The link to the Firebase server is https://material-sandbox.firebaseio.com/.
-
-Presently the application consists of 3 UI router views; a simple chat, a list of users, and a new user form.
-
-The following Bower components of note are used:
- - Angular
- - Angular Material
- - UI-Router
- - Firebase
- - Angular Fire
-
-Exporting the path in local bashrc will make executable of node modules available on command line. 
 ```bash
-export PATH="./node_modules/.bin:$PATH"
+git checkout -f step5
+node server
 ```
 
-Please run npm install and bower install to download all of the needed packages.
-
-**The build scripts in package.json require the following to be installed globally:**
- - [Browserify][browserify] (npm install -g browserify)
- - [Watchify][watchify] (npm install -g watchify)
-
-The application uses CommonJS commands for modularization. The distinguishable difference is that 'require' and 'module.exports' are used, both commands common in NodeJS. Because of this, Browserify **must** be used to bundle the application since it supports 'require' and modules.
-
-To start the bundling process, run in the main directory:
+If needed, start the NPM runner in another terminal.
 ```bash
 npm start
 ```
 
-[Nodemon][nodemon] or another node watcher is recommended (npm install -g nodemon) for monitoring any changes in the source and automatically restarting the server.
+###Summary###
+Now that we have familiarized ourselves with developming an Angular app, let's create a real time chat client. Between the first 4 steps, you have all of the tools to accomplish this task.
 
-To start theserver using Nodemon, in another terminal session in the main directory, run:
-```bash
-nodemon server
-```
+Upon completion, you should be able to view the name and message content for all posted messages in the Firebase chat instance. Additionally, there should be a form to input the name and message. After clicking to submit the chat message, the name should remain, but the chat message in the input element should be cleared.
 
-[nodemon]: http://nodemon.io/
-[browserify]: http://browserify.org/
-[watchify]: https://www.npmjs.com/package/watchify
+For reference, here is the link to the [Firebase instance for chat](https://material-sandbox.firebaseio.com/chat).
+
+###Instructions###
+1. Create chat.html and chat.js files
+2. Add a chat controller module to app.js
+3. Update appRouter.js to add a chat state
+4. Using the 'chat' Firebase path, get and display the chat messages array from Firebase
+5. Add a form to post new messages to the chat table
+6. Have the form keep the name but clear the typed message after a submit.
