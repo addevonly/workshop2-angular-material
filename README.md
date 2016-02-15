@@ -1,6 +1,6 @@
 # Workshop 2 - Angular Material and UI-Router with Firebase as the backend DB
 
-This is a workshop designed to practice writing Angular code in order to complete a simple chat client. The workshop is divided into 6 branches with each branch representing a step. Checkout branch 1 and follow the README or the instructions printed in the index.html files to complet each step.
+This is a workshop designed to practice writing Angular code in order to complete a simple chat client. The workshop is divided into 6 branches with each branch representing a step. Checkout branch 1 and follow the README or the instructions printed in the index.html files to complete each step.
 
 ###Getting Started###
 Clone the repository and go to the newly created directory.
@@ -42,8 +42,6 @@ The following Bower components of note are used:
  - Angular Fire
 
 The application uses CommonJS commands for modularization. The distinguishable difference is that 'require' and 'module.exports' are used, both commands common in NodeJS. Because of this, Browserify **must** be used to bundle the application since it supports 'require' and modules.
-
-Unlike a lot of legacy Javascript libraries, we want a very modular architecture consisting of many smaller script files. We also want to organize our directory so scripts and templates reside together.
 
 ###Bundling###
 After the Node/Express server pushes the index.html file to the client, the template must make an HTTP call for each script/stylesheet. In the case of a modular Angular app, there could be dozens of script files so this could severely bog down a page load. Again to differentiate a legacy website from an Angular application, the former would serve a page with each state/view change so generally only one script/stylesheet needs to be loaded at a time. With an Angular application, all scripts/sheets need to be loaded at the beginning.
