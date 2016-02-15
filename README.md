@@ -32,7 +32,7 @@ When you have completed the above instructions or you have reached a stopping po
  *```git checkout -b [your name]```
 3. If you are satisfied with your changes, add your changes. The period after the git add includes all added/deleted/modified files.
  * ```git add .```
-4. Now we want to commit our changes. To tie our commit to the opened issue, make sure to include "Fixes #[issue #] where [issue #] is the Github issue number you created. When we push to the remote server in the final step, the opened issue will automatically be closed. 
+4. Now we want to commit our changes. To tie our commit to the opened issue, make sure to include "Fixes #[issue #] where [issue #] is the Github issue number you created. When we push to the remote server in the final step, the opened issue will be referenced to your commit. 
  * ```git commit -m "Fixes #[issue #] My completed workshop with Angular Material markup"```
 5. Now do a push from your repository to the newly created branch. The new branch will now appear in Github
  * ```git push origin [your branch]```
