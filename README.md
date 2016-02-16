@@ -1,6 +1,6 @@
 # Workshop 2 - Step 1
 
-If you have not done already, check out the branch and run the server. Then browse to htp://localhost:8080.
+If you have not done already, check out the branch and run the server. Then browse to http://localhost:8080.
 
 ```bash
 git checkout step1
