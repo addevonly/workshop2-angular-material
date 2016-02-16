@@ -28,4 +28,4 @@ For reference, here is the link to the [Firebase instance for chat](https://mate
 6. Have the form keep the name but clear the typed message after a submit.
 
 For reference below - screen capture of the [Firebase chat instance](https://material-sandbox.firebaseio.com/chat):
-![firebaseChat](https://cloud.githubusercontent.com/assets/15114749/13079315/a967a6dc-d491-11e5-80a3-5be5eb36cb5f.png
+![firebaseChat](https://cloud.githubusercontent.com/assets/15114749/13079315/a967a6dc-d491-11e5-80a3-5be5eb36cb5f.png)
