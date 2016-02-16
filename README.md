@@ -22,7 +22,5 @@ There is already a factory called firebaseFactory that will make the get, update
 3. Add an input element that will filter the array
  * [filter Filter](https://docs.angularjs.org/api/ng/filter/filter)
 
-
-[nodemon]: http://nodemon.io/
-[browserify]: http://browserify.org/
-[watchify]: https://www.npmjs.com/package/watchify
+For reference below - screen capture of the [Firebase user instance](https://material-sandbox.firebaseio.com/user):
+![firebaseUser](https://cloud.githubusercontent.com/assets/15114749/13079320/ac47b0f4-d491-11e5-8120-815aed232a6b.png)
