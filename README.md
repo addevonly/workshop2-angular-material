@@ -96,7 +96,7 @@ node server
 
 To start the workshop, check out branch step1 and stop (Ctrl+c) and start the server
 ```bash
-git checkout step1
+git checkout -f step1
 node server
 ```
 
