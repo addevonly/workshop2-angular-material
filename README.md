@@ -12,6 +12,12 @@ If needed, start the NPM runner in another terminal.
 npm start
 ```
 
+If ```npm start``` fails to work, manually run the "start" commands instead (Empty the dist.js script and then start browserify+watchify to bundle app.js into dist.js):
+```bash
+> www/dist.js
+watchify www/app.js -o www/dist.js
+```
+
 ###Summary###
 Now that we have familiarized ourselves with developming an Angular app, let's create a real time chat client. Between the first 4 steps, you have all of the tools to accomplish this task.
 
