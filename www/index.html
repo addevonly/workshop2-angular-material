@@ -29,8 +29,8 @@
     <div>Search: <input ng-model='vm.search'></div>
     <br>
     <div ng-repeat='user in vm.users | filter: vm.search | orderBy:"data.name"'>
-      <input ng-model='user.data.name' ng-change='vm.editUser(user)'>
-      <input ng-model='user.data.email' ng-change='vm.editUser(user)'>
+      <input ng-model='user.data.name' ng-change='vm.updateUser(user)'>
+      <input ng-model='user.data.email' ng-change='vm.updateUser(user)'>
       <button ng-click='vm.deleteUser(user)'>Delete</button>
     </div>
 
