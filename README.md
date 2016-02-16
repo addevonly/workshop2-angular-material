@@ -9,8 +9,6 @@ This is a workshop designed to practice writing Angular code in order to complet
 * [Step 5](https://github.com/addevonly/workshop2-angular-material/tree/step5) - Writing a simple chat client
 * [Step 6](https://github.com/addevonly/workshop2-angular-material/tree/step6) - Using Angular Material components
 
-![chat](https://cloud.githubusercontent.com/assets/15114749/13079199/0b61e704-d491-11e5-9b53-5bf6f7c00d11.png)
-
 ###Architecture###
 The single page application (SPA) is served using NodeJS and Express. Firebase is used as the real time database backend. The link to the Firebase server is https://material-sandbox.firebaseio.com/.
 
@@ -89,10 +87,12 @@ bower install
 ```
 
 ###Starting the Server and Workshop###
-Now that everything is installed, make sure you are in the main workshop directory and run the server. Then in a browser, go to http://localhost/8080 to verify the build was successful. You should see something resembling the screen capture at the top of this document:
+Now that everything is installed, make sure you are in the main workshop directory and run the server. Then in a browser, go to http://localhost/8080 to verify the build was successful. You should see something resembling the screen capture below the terminal sample:
 ```bash
 node server
 ```
+
+![chat](https://cloud.githubusercontent.com/assets/15114749/13079199/0b61e704-d491-11e5-9b53-5bf6f7c00d11.png)
 
 To start the workshop, check out branch step1 and stop (Ctrl+c) and start the server
 ```bash
