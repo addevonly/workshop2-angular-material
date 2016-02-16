@@ -28,3 +28,6 @@ Since we are using Firebase, all updates will be automatically pushed out to con
 2. Use ng-disabled to disable the button until the name and email are present
  * If you have not already, add the type='email' attribute to the email input element
  * [ngDisabled](https://docs.angularjs.org/api/ng/directive/ngDisabled) - make sure you include the 'd' at the end of Disabled!
+
+For reference below - screen capture of the [Firebase user instance](https://material-sandbox.firebaseio.com/user):
+![firebaseUser](https://cloud.githubusercontent.com/assets/15114749/13079320/ac47b0f4-d491-11e5-8120-815aed232a6b.png)
