@@ -2,6 +2,8 @@
 
 This is a workshop designed to practice writing Angular code in order to complete a simple chat client. The workshop is divided into 6 branches with each branch representing a step. Checkout branch 1 and follow the README or the instructions printed in the index.html files to complete each step.
 
+![chat](https://cloud.githubusercontent.com/assets/15114749/13079199/0b61e704-d491-11e5-9b53-5bf6f7c00d11.png)
+
 ###Getting Started###
 Clone the repository and go to the newly created directory.
 ```bash
