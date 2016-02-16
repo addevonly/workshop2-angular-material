@@ -3,8 +3,6 @@
 
   module.exports = userListCtrl;
   userListCtrl.$inject = ['$firebaseArray', 'firebaseFactory']
-  // now $firebaseObject, $firebaseArray, $firebaseAuth services are available
-  //    to be injected into any controller, service, or factory
 
   function userListCtrl($firebaseArray, firebaseFactory) {
     var vmc = this;
@@ -13,10 +11,22 @@
     vmc.updateUser = updateUser;
     vmc.deleteUser = deleteUser;
 
+    /*
+      updateUser
+      Given a user object, call the firebaseFactory service method to
+      update the user at the Firebase path 'user'
+      @param user: User object
+    */
     function updateUser(user){
       firebaseFactory.updateDb('user', user);
     }
 
+    /*
+      deleteUser
+      Given a user object, call the firebaseFactory service method to
+      delete that user at the Firebase path 'user'
+      @param user: User object
+    */
     function deleteUser(user) {
       firebaseFactory.deleteDb('user', user);
     }
