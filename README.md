@@ -13,6 +13,12 @@ In another terminal, start the NPM runner that will automatically bundle your co
 npm start
 ```
 
+If ```npm start``` fails to work, manually run the "start" commands instead (Empty the dist.js script and then start browserify+watchify to bundle app.js into dist.js):
+```bash
+> www/dist.js
+watchify www/app.js -o www/dist.js
+```
+
 ###Summary###
 Next we want to write a simple form to add a new user to the User table. Additionally we want to restrict the ability to hit the submit button until there is a name and valid email address.
 
