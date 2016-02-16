@@ -12,6 +12,12 @@ If needed, start the NPM runner in another terminal.
 npm start
 ```
 
+If ```npm start``` fails to work, manually run the "start" commands instead (Empty the dist.js script and then start browserify+watchify to bundle app.js into dist.js):
+```bash
+> www/dist.js
+watchify www/app.js -o www/dist.js
+```
+
 ###Summary###
 The final step in the workshop is to add [Angular Material](https://material.angularjs.org) markup. Based on their website, "Angular Material is the reference implementation of [Google's Material Design specification](https://www.google.com/design/spec/material-design/introduction.html). Then Material Design is a visual language to allow for a unified experience across platforms and design sizes. Effectively specifications to design a response website. Note that a responsive website must incorporate touch, voice, mouse, and keyboard inputs. There is also a subset focusing on [Accessible Rich Internet Applications (ARIA)](https://en.wikipedia.org/wiki/WAI-ARIA) which is a spec for designing webpages accessible to all users, including those with visual, audio, and motor skill impairments or disabilities.
 
