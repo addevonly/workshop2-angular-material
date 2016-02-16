@@ -12,11 +12,11 @@
     <md-list-item ng-repeat='user in vmc.users | filter: vmc.search | orderBy:"data.name"'>
       <md-input-container>
         <label>Name</label>
-        <input ng-model='user.data.name' ng-change='vmc.editUser(user)'>
+        <input ng-model='user.data.name' ng-change='vmc.updateUser(user)'>
       </md-input-container>
       <md-input-container>
         <label>Email</label>
-        <input ng-model='user.data.email' ng-change='vmc.editUser(user)'>
+        <input ng-model='user.data.email' ng-change='vmc.updateUser(user)'>
       </md-input-container>
       <md-button class="md-raised" ng-click='vmc.deleteUser(user)'>Delete</md-button>
     </md-list-item>

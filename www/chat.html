@@ -12,11 +12,11 @@
 </md-content>
 
 
-<form ng-submit='vmc.postChat(name, message)'>
+<form ng-submit='vmc.postChat(newMessage)'>
   <div>
     <md-input-container>
       <label>Name</label>
-      <md-select ng-model='name'>
+      <md-select ng-model='newMessage.name'>
         <md-option ng-repeat='user in vmc.savedUsers' value={{user.data.name}}>
           {{user.data.name}}
         </md-option>
@@ -26,8 +26,8 @@
   <div>
     <md-input-container>
       <label>Message</label>
-      <input ng-model='message'>
+      <input ng-model='newMessage.message'>
     </md-input-container>
   </div>
-  <md-button class="md-raised md-primary" ng-disabled='!name || !message' type='submit'>Submit</md-button>
+  <md-button class="md-raised md-primary" ng-disabled='!newMessage.name || !newMessage.message' type='submit'>Submit</md-button>
 </form>
