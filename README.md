@@ -46,12 +46,13 @@ git config --global url."https://".insteadOf git://
 bower install
 ```
 
-Now that everything is installed, run the server and browse to http://localhost/8080 to verify the build was successful:
+###Starting the Server and Workshop###
+Now that everything is installed, make sure you are in the main workshop directory and run the server. Then in a browser, go to http://localhost/8080 to verify the build was successful. You should see something resembling the screen capture at the top of this document:
 ```bash
 node server
 ```
 
-To start the workshop, check out branch step1 and run the server
+To start the workshop, check out branch step1 and stop (Ctrl+c) and start the server
 ```bash
 git checkout step1
 node server
