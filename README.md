@@ -12,6 +12,12 @@ If you have not already done so, start the NPM runner in another terminal to aut
 npm start
 ```
 
+If ```npm start``` fails to work, manually run the "start" commands instead (Empty the dist.js script and then start browserify+watchify to bundle app.js into dist.js):
+```bash
+> www/dist.js
+watchify www/app.js -o www/dist.js
+```
+
 ###Summary###
 So far our application uses some of the basic built-in directives including ngRepeat, ngClick, ngSubmit, etc. We also have a modular structure with logic abstracted between the template, controller, and factory. However one of the real benefits of a front end framework like AngularJS is the ability to build multiple views and routes within a Single Page Application (SPA).
 
