@@ -87,7 +87,7 @@ bower install
 ```
 
 ###Starting the Server and Workshop###
-Now that everything is installed, make sure you are in the main workshop directory and run the server. Then in a browser, go to http://localhost/8080 to verify the build was successful. You should see something resembling the screen capture below the terminal sample:
+Now that everything is installed, make sure you are in the main workshop directory and run the server. Then in a browser, go to http://localhost:8080 to verify the build was successful. You should see something resembling the screen capture below the terminal sample:
 ```bash
 node server
 ```
@@ -100,4 +100,4 @@ git checkout -f step1
 node server
 ```
 
-Browse to http://localhost/8080 and the [README](https://github.com/addevonly/workshop2-angular-material/tree/step1) for the first step and follow the instructions.
+Browse to http://localhost:8080 and the [README](https://github.com/addevonly/workshop2-angular-material/tree/step1) for the first step and follow the instructions.
