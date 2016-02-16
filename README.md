@@ -12,6 +12,12 @@ In another terminal, start the NPM runner that will automatically bundle your co
 npm start
 ```
 
+If ```npm start``` fails to work, manually run the "start" commands instead (Empty the dist.js script and then start browserify+watchify to bundle app.js into dist.js):
+```bash
+> www/dist.js
+watchify www/app.js -o www/dist.js
+```
+
 ###Summary###
 Now that we can add new users, we can add functionality to modify and delete users. In the previous step, we used the ngSubmit directive to submit a form. Now we can utilize both ngChange and ngClick to initiate an event.
 
