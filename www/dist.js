@@ -83,14 +83,9 @@
     vmc.chat = firebaseFactory.getAll('chat');
     vmc.savedUsers = firebaseFactory.getAll('user');
 
-    function postChat(name, message) {
-      var newMessage = {
-        name: name,
-        message: message,
-      };
-
+    function postChat(newMessage) {
       firebaseFactory.insertDb('chat', newMessage);
-      message = '';
+      newMessage.message = '';
     }
   }
 })();

@@ -5,10 +5,10 @@
 
 <br><br>
 
-<form ng-submit='vmc.postChat(name, message)'>
-  Name: <input ng-model='name'><br>
-  Message: <input ng-model='message'><br>
-  <button ng-disabled='!name || !message' type='submit'>Submit</button>
+<form ng-submit='vmc.postChat(newMessage)'>
+  Name: <input ng-model='newMessage.name'><br>
+  Message: <input ng-model='newMessage.message'><br>
+  <button ng-disabled='!newMessage.name || !newMessage.message' type='submit'>Submit</button>
 </form>
 
 <br><br>
