@@ -13,7 +13,17 @@ npm start
 ```
 
 ###Summary###
-So far our app uses a single view and a single controller. However one of the benefits of a front end framework like AngularJS is the ability to build multiple views and routes within a Single Page Application (SPA). The Angular team does provide the [ngRoute](https://docs.angularjs.org/api/ngRoute) module to accomplish routing but the developer community created [Angular UI-Router](https://github.com/angular-ui/ui-router), now the de factor choice.
+So far our application uses some of the basic built-in directives including ngRepeat, ngClick, ngSubmit, etc. We also have a modular structure with logic abstracted between the template, controller, and factory. However one of the real benefits of a front end framework like AngularJS is the ability to build multiple views and routes within a Single Page Application (SPA).
+
+###Client Side Routing Summary###
+Client side and server side URL routing are essentially the same concept and are often used together. Just as Apache (HTTP server) handles the address bar URL requests to point to our servlets to execute and respond with html- client side routing does the same, but in the browser.
+
+The client side aspect usually starts with Hash Based Routing (www.example.com/#list). So you can think of the client side router owning anything after the #, and Apache (HTTP server) owns anything before the hash.
+
+This is necessary to SPAs because the page is normally loaded once (from Apaches etc) with sections of pages (states), or whole page views changing dynamically (via the client side router) without a page refresh. From an end user perspective, the browsing experience will be significantly smoother without the frequent page reloads.
+
+###Client Side Routing Options - ngRoute <<< UI-Router###
+The Angular team does provide the [ngRoute](https://docs.angularjs.org/api/ngRoute) module to accomplish routing but the developer community created [Angular UI-Router](https://github.com/angular-ui/ui-router), now the de factor choice.
 
 From a template perspective, the syntax is nearly identical:
 
@@ -40,6 +50,7 @@ Our simple example for the workshop does not take advantage of these two feature
 The other half of routing (ngRoute or UI-Router) is the addition of a config module that handles the routes. In this workshop, that config module is in appRouter.js. Fortunately the module is already completed for this step. We only have to worry about moving the template and controller logic to separate files.
 
 Recommended further Reading/Viewing:
+
 1. [Stack Overflow question](http://stackoverflow.com/questions/21023763/angularjs-difference-between-angular-route-and-angular-ui-router) detailing why UI-Router is preferred to ngRoute
 2. [Youtube UI-Router tutorial](https://www.youtube.com/watch?v=dqJRoh8MnBo) from Tim Kindber, one of the founders/advocates for UI-Router.
 
