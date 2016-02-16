@@ -18,6 +18,26 @@ export PATH="./node_modules/.bin:$PATH"
 bower install
 ```
 
+You will probably see a message while installing the bower components that looks like the sample and image below. This is due to Bower components that are dependent on Angular; i.e. these Bower components will fail to work without Angular. For instance, Angular-Material was developed using Angular version 1.4.8 whereas Angular Fire used version 1.3.
+
+```bash
+Unable to find a suitable version for angular, please choose one:
+ 1) Angular#1.3.x ... angularfire
+ 2) angular#1.5.0 ... angular-aria
+ 3) angular#^1.5.0 ... workshop2-angular-material
+ 4) angular#^1.0.8 ... angular-ui-router
+ 5) angular#^1.4.8 ... angular-material
+ 
+ Prefix the choice with ! to persist it to bower.json
+ ? Answer
+```
+
+You must select the highest option available or else some of the Bower components may fail to work. In the example below, option 2 or option 3 will work.
+
+***Warning:*** For Windows users, ```bower install``` will fail to work with Cygwin. Command prompt, Git Bash, Git are alternatives.
+
+![bowerIssue](https://cloud.githubusercontent.com/assets/15114749/13083353/9c007b66-d4a2-11e5-85ef-ba8f9aa5bc91.jpg)
+
 Run the server and browse to http://localhost/8080 to verify the build was successful:
 ```bash
 node server
