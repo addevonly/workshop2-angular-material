@@ -38,7 +38,15 @@ You must select the highest option available or else some of the Bower component
 
 ![bowerIssue](https://cloud.githubusercontent.com/assets/15114749/13083353/9c007b66-d4a2-11e5-85ef-ba8f9aa5bc91.jpg)
 
-Run the server and browse to http://localhost/8080 to verify the build was successful:
+Everything installed correctly if your www/bower_components directory is populated.
+
+***Bower Install Help*** If you received error messages, you may have a firewall issue. Try running:
+```bash
+git config --global url."https://".insteadOf git://
+bower install
+```
+
+Now that everything is installed, run the server and browse to http://localhost/8080 to verify the build was successful:
 ```bash
 node server
 ```
