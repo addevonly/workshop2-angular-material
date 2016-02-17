@@ -13,7 +13,6 @@
     vmc.savedUsers = firebaseFactory.getAll('user');
 
     function postChat(newMessage) {
-      console.log(newMessage);
       firebaseFactory.insertDb('chat', newMessage);
       newMessage.message = '';
     }

@@ -1,5 +1,5 @@
 <h3>Create new user:</h3>
-<form ng-submit='vmc.addNewUser(newUser)'>
+<form>
   <md-content>
     <div>
       <md-input-container>
@@ -14,7 +14,7 @@
       </md-input-container>
     </div>
     <div>
-      <md-button class="md-raised" ng-disabled='!newUser.name || !newUser.email'>Submit</md-button>
+      <md-button type='submit' ng-click='vmc.addNewUser(newUser)' class="md-raised" ng-disabled='!newUser.name || !newUser.email'>Submit</md-button>
     </div>
   </md-content>
 </form>
