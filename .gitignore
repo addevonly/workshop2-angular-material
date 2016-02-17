@@ -2,4 +2,3 @@
 node_modules/
 
 # Skip bower_components
-www/bower_components/
