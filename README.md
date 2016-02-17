@@ -51,7 +51,7 @@ git clone git@github.com:addevonly/workshop2-angular-material.git
 cd workshop2-angular-material
 ```
 
-Next you will need to install the packages and dependencies needed to run the app. The second step exports the path so bower can be run from the command line.
+Next you will need to install the packages and dependencies needed to run the app. ***If you are using a Mac***, you will need to prepend ```sudo``` in front of ```npm install``` (i.e. ```sudo npm install```). The second step exports the path so Bower can be run from the command line.
 ```bash
 npm install
 export PATH="./node_modules/.bin:$PATH"
@@ -74,7 +74,7 @@ Unable to find a suitable version for angular, please choose one:
 
 You must select the highest option available or else some of the Bower components may fail to work. In the example below, option 2 or option 3 will work.
 
-***Warning:*** For Windows users, ```bower install``` will fail to work with Cygwin. Command prompt, Git Bash, Git are alternatives.
+***Warning to Windows Users:*** ```bower install``` will not work properly with Cygwin. Command prompt, Git Bash, Git are alternatives. However after that, you should be able to continue using Cygwin for navigation and building.
 
 ![bowerIssue](https://cloud.githubusercontent.com/assets/15114749/13083353/9c007b66-d4a2-11e5-85ef-ba8f9aa5bc91.jpg)
 
