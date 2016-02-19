@@ -29,10 +29,6 @@
 
     vm.tabs = firebaseFactory.getAll('tabs');
     vm.selectedIndex = 0;
-
-    // $scope.$on('$stateChange', function(toState) {
-    //   vm.selectedIndex = toState.selectedTab;
-    // });
   }
 })();
 
@@ -205,7 +201,7 @@
     function addNewUser(newUser) {
       firebaseFactory.insertDb('user', newUser);
       newUser.name = '';
-      newUser.email = ''
+      newUser.email = '';
     }
   }
 })();
