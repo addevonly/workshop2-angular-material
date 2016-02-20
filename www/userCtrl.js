@@ -18,7 +18,7 @@
     function addNewUser(newUser) {
       firebaseFactory.insertDb('user', newUser);
       newUser.name = '';
-      newUser.email = ''
+      newUser.email = '';
     }
   }
 })();

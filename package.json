@@ -3,12 +3,6 @@
   "version": "1.0.0",
   "description": "Angular Material, UI-Router, Firebase",
   "main": "index.js",
-  "scripts": {
-    "clean": "> www/dist.js",
-    "bundle": "browserify www/app.js -o www/dist.js",
-    "watch": "watchify www/app.js -o www/dist.js",
-    "start": "npm run clean && npm run watch"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/addevonly/workshop2-angular-material.git"
@@ -26,11 +20,16 @@
   },
   "homepage": "https://github.com/addevonly/workshop2-angular-material#readme",
   "dependencies": {
-    "express": "^4.13.4"
+    "express": "^4.13.4",
+    "gulp-livereload": "^3.8.1",
+    "vinyl-source-stream": "^1.1.0"
   },
   "devDependencies": {
     "bower": "^1.7.7",
     "browserify": "^13.0.0",
-    "watchify": "^3.7.0"
+    "gulp": "3.9.1",
+    "gulp-nodemon": "^2.0.6",
+    "gulp-plumber": "1.1.0",
+    "gulp-watch": "4.3.5"
   }
 }

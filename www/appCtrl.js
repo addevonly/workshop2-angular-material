@@ -10,9 +10,5 @@
 
     vm.tabs = firebaseFactory.getAll('tabs');
     vm.selectedIndex = 0;
-
-    // $scope.$on('$stateChange', function(toState) {
-    //   vm.selectedIndex = toState.selectedTab;
-    // });
   }
 })();
