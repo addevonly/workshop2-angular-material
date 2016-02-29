@@ -4,18 +4,7 @@ Stop the server (Ctrl+c), check out the step3 branch, and then start the server 
 
 ```bash
 git checkout -f step3
-node server
-```
-
-In another terminal, start the NPM runner that will automatically bundle your code upon any code changes. Once again note that if you already ran this command in a previous step, the watchify will detect the changes from the checkout and rebuild a new dist.js.
-```bash
-npm start
-```
-
-If ```npm start``` fails to work, manually run the "start" commands instead (Empty the dist.js script and then start browserify+watchify to bundle app.js into dist.js):
-```bash
-> www/dist.js
-watchify www/app.js -o www/dist.js
+gulp
 ```
 
 ###Summary###
