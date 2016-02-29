@@ -28,19 +28,29 @@ After the Node/Express server pushes the index.html file to the client, the temp
 
 To limit the number of calls, the Angular application is bundled into one dist.js script (dist = distribution).
 
-If you go to the package.json script in the main directory, you can view the scripts that bundle the application.
-```bash
-"scripts": {
-  "clean": "> www/dist.js",
-  "bundle": "browserify www/app.js -o www/dist.js",
-  "watch": "watchify www/app.js -o www/dist.js",
-  "start": "npm run clean && npm run watch"
-},
+The task runner [Gulp](http://gulpjs.com/) is a NodeJS application that can build and deploy your application. For the purpose of this workshop, we are using Gulp to bundle the Javascript into one file and start the server. The script also watches for changes and rebuilds a new bundled file. The server will automatically restart after any changes. Finally, if you download the Chrome extension [Live Reload](https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei?hl=en), the browser will automatically refresh (assuming you are using Google Chrome).
+
+In the main directory, the Gulp file gulpFile.js has the follwing tasks:
 ```
-1. clean - deletes the dist.js bundle
-2. bundle - calls Browserify to bundle the application into dist.js
-3. watch - calls Watchify to watch for any changes to the Angular application, calls Browserify if there are any changes
-4. start - deletes the dist.js and calls watch
+1. build - calls Browserify to bundle the app into www/dist.js, refreshes the browser if the Chrome Live Reload extension is installed
+2. server - starts the server, restarts the server if there are changes
+3. watch - runs until Gulp is closed. Calls build if there sa change to the .js or .html files in the www/ folder ignoring www/dist.js
+4. default - calls build, server, and watch
+```
+Unix users should be familiar with the .pipe() or | used to redirect the output. The .pipe() function is used to chain together tasks.
+
+```
+gulp.task('build', function() {
+ return browserify({ entries: './www/app.js'})
+  .bundle() 
+   .pipe(source('dist.js'))
+   .pipe(gulp.dest('./www'))
+   .pipe(livereload());
+});
+```
+After browserify bundles the application, we are redirecting the output to dist.js, then saving that to ./www, then refreshing the browser (if Live Reload is enabled in Chrome).
+
+Ultimately, the main advantage is that one command ```gulp``` will bundle the application, turn on the watch, and start/restart the server. Gulp is easy to scale up from a prototype to an enterprise applications thanks to the many NPM Gulp packages that can be imported. Most of them are prefixed with "gulp-" such as [gulp-plumber](https://www.npmjs.com/package/gulp-plumber), [gulp-nodemon](https://www.npmjs.com/package/gulp-nodemon), and [gulp-livereload](https://www.npmjs.com/package/gulp-livereload), all of which are used in this application. 
 
 For debugging purposes, we are not including minification which removes whitespace and substitutes names/functions for characters. Minification decreases the size of the file and can also mask your scripts from other users.
 
@@ -58,7 +68,7 @@ export PATH="./node_modules/.bin:$PATH"
 bower install
 ```
 
-You will probably see a message while installing the bower components that looks like the sample and image below. This is due to Bower components that are dependent on Angular; i.e. these Bower components will fail to work without Angular. For instance, Angular-Material was developed using Angular version 1.4.8 whereas Angular Fire used version 1.3.
+You may see a message while installing the bower components that looks like the sample and image below. This is due to Bower components that are dependent on Angular; i.e. these Bower components will fail to work without Angular. For instance, Angular-Material was developed using Angular version 1.4.8 whereas Angular Fire used version 1.3.
 
 ```bash
 Unable to find a suitable version for angular, please choose one:
@@ -87,17 +97,17 @@ bower install
 ```
 
 ###Starting the Server and Workshop###
-Now that everything is installed, make sure you are in the main workshop directory and run the server. Then in a browser, go to http://localhost:8080 to verify the build was successful. You should see something resembling the screen capture below the terminal sample:
+Now that everything is installed, make sure you are in the main workshop directory and run the default Gulp script to start the server. Then in a browser, go to http://localhost:8080 to verify the build was successful. You should see something resembling the screen capture below the terminal sample:
 ```bash
-node server
+gulp
 ```
 
+Then browse to http://localhost:8080 where you should see something resembling the following:
 ![chat](https://cloud.githubusercontent.com/assets/15114749/13079199/0b61e704-d491-11e5-9b53-5bf6f7c00d11.png)
 
-To start the workshop, check out branch step1 and stop (Ctrl+c) and start the server
+To start the workshop, check out branch step1 and stop (Ctrl+c).
 ```bash
 git checkout -f step1
-node server
 ```
 
 Browse to http://localhost:8080 and the [README](https://github.com/addevonly/workshop2-angular-material/tree/step1) for the first step and follow the instructions.
