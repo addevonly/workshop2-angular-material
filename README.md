@@ -47,7 +47,7 @@ For debugging purposes, we are not including minification which removes whitespa
 ###Getting Started###
 Clone the repository and go to the newly created directory.
 ```bash
-git clone git@github.com:addevonly/workshop2-angular-material.git
+git clone https://github.com/addevonly/workshop2-angular-material.git
 cd workshop2-angular-material
 ```
 
