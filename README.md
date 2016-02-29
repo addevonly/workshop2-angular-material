@@ -1,22 +1,10 @@
 # Workshop 2 - Step 2
 
-Stop the server (Ctrl+c), check out the step2 branch, and then start the server. Under normal circumstances you DO NOT want to append the -f force flag since this will discard any changes in the previous working branch. But since we are instead using the Git branches as tutorial steps, we should use the force flag to move to the next step. After browsing to http://localhost:8080 again, you will see that Step 1 has been completed and you now have instructions for step 2.
+Stop the server (Ctrl+c), check out the step2 branch, and then start the server using the ```gulp``` command. Under normal circumstances you DO NOT want to append the -f force flag since this will discard any changes in the previous working branch. But since we are instead using the Git branches as tutorial steps, we should use the force flag to move to the next step. After browsing to http://localhost:8080 again, you will see that Step 1 has been completed and you now have instructions for step 2.
 
 ```bash
 git checkout -f step2
-node server
-```
-
-In another terminal, start the NPM runner that will automatically bundle your code upon any code changes. Note that if you were already running this command in step 1, you do not need to re-run this step as the watchify Node app will detect a change when you checked out the step2 branch.
-
-```bash
-npm start
-```
-
-If ```npm start``` fails to work, manually run the "start" commands instead (Empty the dist.js script and then start browserify+watchify to bundle app.js into dist.js):
-```bash
-> www/dist.js
-watchify www/app.js -o www/dist.js
+gulp
 ```
 
 ###Summary###
