@@ -3,7 +3,7 @@
 If you have not done already, check out the branch and run the server. Then browse to http://localhost:8080.
 
 ```bash
-git checkout step1
+git checkout -f step1
 gulp
 ```
 
