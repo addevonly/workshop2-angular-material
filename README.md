@@ -4,18 +4,7 @@ Stop the server (Ctrl+c), check out the step5 branch, and then start the server 
 
 ```bash
 git checkout -f step6
-node server
-```
-
-If needed, start the NPM runner in another terminal.
-```bash
-npm start
-```
-
-If ```npm start``` fails to work, manually run the "start" commands instead (Empty the dist.js script and then start browserify+watchify to bundle app.js into dist.js):
-```bash
-> www/dist.js
-watchify www/app.js -o www/dist.js
+gulp
 ```
 
 ###Summary###
