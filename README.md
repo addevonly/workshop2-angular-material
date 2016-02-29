@@ -4,7 +4,7 @@ If you have not done already, check out the branch and run the server. Then brow
 
 ```bash
 git checkout step1
-node server
+gulp
 ```
 
 ###Summary###
