@@ -4,7 +4,8 @@ var gulp = require('gulp'),
     plumber = require('gulp-plumber'),
     watch = require('gulp-watch')
     nodemon = require('gulp-nodemon'),
-    livereload = require('gulp-livereload');
+    livereload = require('gulp-livereload'),
+    templateCache = require('gulp-angular-templatecache');
 
 // Live Reload requires the Chrome extension Live Reload to also be downloaded
 // and activated
@@ -17,6 +18,12 @@ gulp.task('build', function() {
     .pipe(source('dist.js'))
     .pipe(gulp.dest('./www'))
     .pipe(livereload());
+});
+
+gulp.task('template', function() {
+  return gulp.src('./www/*.html')
+    .pipe(templateCache())
+    .pipe(gulp.dest('./www'));
 });
 
 // Watches the www folder, but ignores the www/dist.js
@@ -34,4 +41,4 @@ gulp.task('server', function() {
 
 // Default script - type 'gulp' in the terminal to run
 // Builds the bundle, starts the server, and watches for changes
-gulp.task('default', ['build', 'server', 'watch']);
+gulp.task('default', ['template', 'build', 'server', 'watch']);

@@ -10,7 +10,10 @@
       url: '/chat',
       views: {
         'view': {
-          templateUrl: 'chat.html',
+          //templateUrl: 'chat.html',
+          templateProvider: function($templateCache) {
+            return $templateCache.get('chat.html')
+          },
           controller: 'chatCtrl as vmc',
         }
       }
@@ -19,7 +22,10 @@
       url: '/userList',
       views: {
         'view': {
-          templateUrl: 'userList.html',
+          //templateUrl: 'userList.html',
+          templateProvider: function($templateCache) {
+            return $templateCache.get('userList.html')
+          },
           controller: 'userListCtrl as vmc',
         }
       }
@@ -28,7 +34,10 @@
       url: '/user',
       views: {
         'view': {
-          templateUrl: 'user.html',
+          //templateUrl: 'user.html',
+          templateProvider: function($templateCache) {
+            return $templateCache.get('user.html')
+          },
           controller: 'userCtrl as vmc',
         }
       }
