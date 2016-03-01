@@ -1,43 +1,24 @@
-# Firebase and Angular-Material Sandbox
+# Workshop 2 - Step 3
 
-This is a sandbox application using Angular Material and Firebase.
+Stop the server (Ctrl+c), check out the step3 branch, and then start the server again. After browsing to http://localhost:8080 again, you will see that Step 2 has been completed and you now have instructions for step 3.
 
-The SPA is served using NodeJS and Express. Firebase is used as the real time database backend. The link to the Firebase server is https://material-sandbox.firebaseio.com/.
-
-Presently the application consists of 3 UI router views; a simple chat, a list of users, and a new user form.
-
-The following Bower components of note are used:
- - Angular
- - Angular Material
- - UI-Router
- - Firebase
- - Angular Fire
-
-Exporting the path in local bashrc will make executable of node modules available on command line. 
 ```bash
-export PATH="./node_modules/.bin:$PATH"
+git checkout -f step3
+gulp
 ```
 
-Please run npm install and bower install to download all of the needed packages.
+###Summary###
+Now that we can add new users, we can add functionality to modify and delete users. In the previous step, we used the ngSubmit directive to submit a form. Now we can utilize both ngChange and ngClick to initiate an event.
 
-**The build scripts in package.json require the following to be installed globally:**
- - [Browserify][browserify] (npm install -g browserify)
- - [Watchify][watchify] (npm install -g watchify)
-
-The application uses CommonJS commands for modularization. The distinguishable difference is that 'require' and 'module.exports' are used, both commands common in NodeJS. Because of this, Browserify **must** be used to bundle the application since it supports 'require' and modules.
-
-To start the bundling process, run in the main directory:
-```bash
-npm start
-```
-
-[Nodemon][nodemon] or another node watcher is recommended (npm install -g nodemon) for monitoring any changes in the source and automatically restarting the server.
-
-To start theserver using Nodemon, in another terminal session in the main directory, run:
-```bash
-nodemon server
-```
-
-[nodemon]: http://nodemon.io/
-[browserify]: http://browserify.org/
-[watchify]: https://www.npmjs.com/package/watchify
+###Instructions###
+1. Change name and email to input fields
+ * Since we want to edit the user's name and email address, we need to modify the contents inside the ng-repeat div to use an input element
+2. Use ng-change so the Firebase user table is updated upon an inputted change
+ * Add the ngChange directive as an attribute to each input.
+ * [ngChange](https://docs.angularjs.org/api/ng/directive/ngChange)
+ * Complete the updateUser() method in appCtrl.js
+ * Refer to firebaseFactory.js to find the appropriate service method to call in updateUser()
+3. Add a delete button and function to remove a user from Firebase
+ * [ngClick](https://docs.angularjs.org/api/ng/directive/ngClick)
+ * Complete the deleteUser() method in appCtrl.js
+ * Refer to firebaseFactory.js to find the appropriate service method to call in deleteUser()
