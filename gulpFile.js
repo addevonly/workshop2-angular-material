@@ -22,7 +22,7 @@ gulp.task('build', function() {
 
 gulp.task('template', function() {
   return gulp.src('./www/*.html')
-    .pipe(templateCache())
+    .pipe(templateCache('templates.js', options={standalone: true}))
     .pipe(gulp.dest('./www'));
 });
 

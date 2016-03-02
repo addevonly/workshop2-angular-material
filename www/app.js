@@ -5,7 +5,7 @@
       'ui.router',
       'ngMaterial',
       'firebase',
-      require('./templates').name
+      'templates'
   ])
   .config(['$stateProvider', '$urlRouterProvider', require('./appRouter')])
   .controller('appCtrl', require('./appCtrl'))
