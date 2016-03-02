@@ -55,5 +55,5 @@ Please generously use the existing tasks in gulpFile.js and the documentation fo
 1. Install Gulp-JSHint as a dev dependency
 2. Import the module to gulpFile.js
 3. Create a new lint Gulp task that grabs all .js files in the ./www folder BUT ignores dist.js
-4. Verify the task works using gulp ```lint```
+4. Verify the task works using ```gulp lint```
 5. Integrate into the default task
