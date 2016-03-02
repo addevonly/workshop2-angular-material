@@ -8,7 +8,6 @@ This is a workshop designed to practice writing Angular code in order to complet
 * [Step 4](https://github.com/addevonly/workshop2-angular-material/tree/step4) - UI Router intro
 * [Step 5](https://github.com/addevonly/workshop2-angular-material/tree/step5) - Writing a simple chat client
 * [Step 6](https://github.com/addevonly/workshop2-angular-material/tree/step6) - Using Angular Material components
-
 * [Gulp](https://github.com/addevonly/workshop2-angular-material/tree/gulp-jshint) - Creating a new Gulp Task
  
 ###Architecture###
