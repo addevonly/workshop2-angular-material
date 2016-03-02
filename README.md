@@ -9,6 +9,8 @@ This is a workshop designed to practice writing Angular code in order to complet
 * [Step 5](https://github.com/addevonly/workshop2-angular-material/tree/step5) - Writing a simple chat client
 * [Step 6](https://github.com/addevonly/workshop2-angular-material/tree/step6) - Using Angular Material components
 
+* [Gulp](https://github.com/addevonly/workshop2-angular-material/tree/gulp-jshint) - Creating a new Gulp Task
+ 
 ###Architecture###
 The single page application (SPA) is served using NodeJS and Express. Firebase is used as the real time database backend. The link to the Firebase server is https://material-sandbox.firebaseio.com/.
 
