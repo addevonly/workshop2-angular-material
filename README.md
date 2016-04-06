@@ -31,7 +31,7 @@ git clone https://github.com/addevonly/workshop2-angular-material.git
 git fetch
 git checkout -f gulp-jshint
 npm install
-npm install -g gulp
+npm install -g gulp-cli
 gulp
 ```
 
