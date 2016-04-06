@@ -25,6 +25,15 @@ After browserify bundles the application, we are redirecting the output to dist.
 
 Ultimately, the main advantage is that one command ```gulp``` will bundle the application, turn on the watch, and start/restart the server. Gulp is easy to scale up from a prototype to an enterprise applications thanks to the many NPM Gulp packages that can be imported. Most of them are prefixed with "gulp-" such as [gulp-plumber](https://www.npmjs.com/package/gulp-plumber), [gulp-nodemon](https://www.npmjs.com/package/gulp-nodemon), and [gulp-livereload](https://www.npmjs.com/package/gulp-livereload), all of which are used in this application. 
 
+###Setup###
+```
+git clone https://github.com/addevonly/workshop2-angular-material.git
+git fetch
+git checkout -f gulp-jshint
+npm install
+gulp
+```
+
 ###JSHint###
 Linting is a recommended process to help ensure quality code is delivered to production. For this exercise, we are going to be implementing [JSHint](http://jshint.com/).
 
